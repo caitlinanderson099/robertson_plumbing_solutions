@@ -4,6 +4,8 @@ import PageHeader from '../components/PageHeader'
 
 
 const Plumbing = () => {
+
+
   return (
     <>
     <SEO
@@ -13,12 +15,17 @@ const Plumbing = () => {
         author="Robertson Plumbing Solutions"
         image="http://localhost:5173/logo-images/logo.svg"
       />
-      <div>
         <PageHeader 
           title="Plumbing" 
           backgroundImage="/bg-images/plumbing-bg.webp" 
-        />      
-      </div>
+        /> 
+        <div className="plumbing-page">
+          <div className="section-header">
+            <h2>Our plumbing services</h2>
+            <hr />
+          </div> 
+        </div>
+        
     </>
   )
 }

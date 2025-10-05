@@ -266,6 +266,37 @@ button:hover {
   width: 50%;
 }
 
+/* ----------- Plumbing Page CSS ------------- */
+
+.plumbing-page {
+  padding: 30px;
+}
+
+.plumbing-page .section-header {
+  text-align: right;
+}
+
+/* ----------- Drainlaying Page CSS ------------- */
+
+.drainlaying-page {
+  padding: 30px;
+}
+
+.drainlaying-page .section-header {
+  text-align: left;
+}
+
+/* ----------- Central Heating Page CSS ------------- */
+
+.centralheating-page {
+  padding: 30px;
+}
+
+.centralheating-page .section-header {
+  text-align: left;
+}
+
+
 /* ----------- Contact Us Page CSS ------------- */
 .contact-form-container {
   max-width: 800px;

@@ -13,12 +13,16 @@ const CentralHeating = () => {
         author="Robertson Plumbing Solutions"
         image="http://localhost:5173/logo-images/logo.svg"
       />
-      <div className='central-heating-page'>
         <PageHeader 
           title="Central heating" 
           backgroundImage="/bg-images/heating-bg.webp" 
-        />      
-      </div>
+        />  
+        <div className="centralheating-page">
+          <div className="section-header">
+            <h2>Our central heating services</h2>
+            <hr />
+          </div> 
+        </div>    
     </>
   )
 }
