@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Plumbing from './pages/Plumbing';
 import './App.css';
-import Navbar from './components/NavBar';
+import Navbar from './components/Navbar';
 import Drainlaying from './pages/Drainlaying'
 import CentralHeating from './pages/CentralHeating'
 import Contact from './pages/Contact'
