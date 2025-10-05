@@ -1,11 +1,12 @@
-// src/App.jsx
 import React from 'react';
+import './App.css';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
+// PAGE IMPORTS
 import Home from './pages/Home';
 import About from './pages/About';
 import Plumbing from './pages/Plumbing';
-import './App.css';
-import Navbar from './components/Navbar';
 import Drainlaying from './pages/Drainlaying'
 import CentralHeating from './pages/CentralHeating'
 import Contact from './pages/Contact'
