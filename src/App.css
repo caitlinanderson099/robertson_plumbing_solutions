@@ -1,0 +1,560 @@
+/* -------------- Google Font Import ------------ */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+/* ------------- Global Reset --------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------- Body CSS ---------------- */
+body {
+  max-width: 100%;
+  max-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--light-grey);
+}
+
+/* ----------------- Colour Variables --------------- */
+:root {
+  --charcoal-black: #111827; 
+  --light-grey: #F3F4F6;
+  --yellow-color: #FDDF48;
+}
+
+/* ------------- Button CSS --------------- */
+button {
+   padding: 10px;
+  background: var(--yellow-color);
+  color: var(--charcoal-black);
+  border: none;
+  font-weight: 500;
+  font-size: 1em;
+  text-transform: capitalize;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-family: "League Spartan", sans-serif;
+}
+button:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+  background-color: #e1bf15;
+}
+
+/* ----------------- Navbar CSS --------------- */
+.navbar {
+  display: flex;
+  justify-content: center; /* centers all nav content horizontally */
+  align-items: center;     /* centers them vertically */
+  gap: 4rem;               /* spacing between logo, links, and CTA */
+  padding: 10px;
+  background: var(--light-grey);
+  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  flex-direction: row; /* desktop: horizontal */
+}
+/* Logo + hamburger inline */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* Hide mobile toggle on desktop */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+/* Links (desktop view = horizontal row) */
+.nav-links {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.nav-links .cta {
+  width: 200px;
+}
+.nav-links a {
+  color: var(--charcoal-black);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative; /* needed for pseudo-elements */
+  padding-bottom: 6px; /* gives space for the lines */
+}
+/* First line */
+.nav-links a::before,
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px; /* line thickness */
+  background-color: var(--yellow-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+/* Position the two lines */
+.nav-links a::before {
+  bottom: 0;
+}
+.nav-links a::after {
+  bottom: -4px; /* space between the lines */
+}
+/* Hover effect */
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+.nav-links a.active::before,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+/* ----------------- Page Header CSS --------------- */
+.page-header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F3F4F6;
+  position: relative;
+
+  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for darkness */
+  z-index: 1;
+}
+.header-title {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* ----------------- Landing Page Header CSS --------------- */
+.landing-header {
+  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  height: 90vh;
+  img {
+    z-index: 1;
+  }
+}
+.landing-header .header-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 60px;
+  z-index: 1;
+  width: 100%;
+}
+.landing-header .header-cta .icons-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 30%;
+}
+.landing-header .header-cta img {
+  width: 200px;
+}
+.landing-header .header-cta .social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.landing-header .header-cta .social-icons .icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.landing-header .header-cta .social-icons svg {
+  font-size: 2em;
+  background-color: var(--yellow-color);
+  color: var(--charcoal-black);
+  transition: all 0.3s ease;
+  border-radius: 20%;
+  padding: 5px;
+}
+.landing-header .header-cta .social-icons svg:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+  background-color: #e1bf15;
+}
+.landing-header .header-cta button {
+  z-index: 1000;
+  width: 100%;
+}
+
+
+/* -------------- Our Services Section & Testimonial Sections CSS ------------- */
+.services-section, .testimonial-section {
+  padding: 30px;
+  background-color: var(--light-grey);
+  color: var(--charcoal-black);
+}
+
+/* ----------------- Section Header Title CSS -------------- */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.6em;
+  color: var(--charcoal-black);
+  margin-bottom: 20px;
+}
+
+/* ------------- About Us Page CSS -------------- */
+.services-section .services-cont {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.services-section .services-cont .service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+.services-section .services-cont .service-item svg {
+  font-size: 4.5em;
+  background-color: var(--yellow-color);
+  padding: 20px;
+  border-radius: 50%;
+}
+.history-section {
+  padding: 30px;
+}
+.history-section .section-header {
+  text-align: right;
+}
+.history-section .history-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.history-section .history-content button {
+  width: 50%;
+}
+
+/* ----------- Contact Us Page CSS ------------- */
+.contact-form-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--light-grey);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 90%; /* keeps padding on mobile */
+}
+/* Form layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+/* Labels */
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--charcoal-black);
+}
+.contact-form label span {
+  color: crimson;
+  font-weight: bold;
+}
+/* Inputs, Textareas, Select */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+/* Input focus */
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--yellow-color);
+  outline: none;
+}
+/* Textarea */
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: "League Spartan", sans-serif;
+}
+.contact-form-section {
+  padding: 20px;
+}
+
+.form-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.socials svg {
+  font-size: 2.5em;
+  background-color: var(--yellow-color);
+  color: var(--charcoal-black);
+  padding: 9px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.socials svg:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+  background-color: #e1bf15;
+}
+/* ------------- TESTIMONIALS & GALLERY PAGE ------------- */
+
+.testimonial-section .section-header {
+  text-align: right;
+}
+.testimonial-section .review-cont {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0px;
+}
+.testimonial-section .review-cont .review-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: var(--light-grey);
+  text-align: center;
+  color: var(--charcoal-black);
+  height: 100%;
+  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+}
+.testimonial-section .review-cont .review-item .star-rating {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--yellow-color);
+}
+.testimonial-section .review-cont .review-item h3{
+  font-size: 1.6rem;
+}
+.gallery-section {
+  padding: 40px;
+  background-color: var(--light-grey);
+  color: var(--charcoal-black);
+}
+.gallery-section .section-header {
+  text-align: center;
+}
+.gallery-swiper {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.gallery-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+.swiper .swiper-button-prev .swiper-button-next {
+  z-index: 1;
+}
+.swiper .swiper-button-prev, .swiper-button-next svg {
+  color: var(--charcoal-black);
+  background-color: var(--yellow-color);
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--yellow-color);
+  padding: 6px;
+}
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+/* Modal box */
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+.modal-img {
+  width: 80vw;       /* take up 80% of viewport width */
+  height: 80vh;      /* take up 80% of viewport height */
+  object-fit: contain; /* fit full image inside without cropping */
+  border-radius: 10px;
+}
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 2rem;
+  background: var(--yellow-color);
+  border: none;
+  color: var(--charcoal-black);
+  cursor: pointer;
+}
+
+/* --------------- Mobile Responsiveness ---------------- */
+@media screen and (max-width: 768px) {
+  /* Footer CSS */
+  footer {
+    font-size: 12px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+  }
+
+   .page-header {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .services-section .services-cont {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .services-section .services-cont .service-item {
+    flex-direction: column;
+  }
+  
+  .testimonial-section .review-cont {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr; /* ✅ one column only on mobile */
+    gap: 1.5rem;
+  }
+
+  /* Full-width fields */
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select,
+  .contact-form button {
+    grid-column: 1 / -1;  /* ✅ full width */
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .contact-form select {
+    border: 1px solid #ddd;
+    color: var(--charcoal-black);
+  }
+
+  /* Button aligned full width */
+  .contact-form button {
+    grid-column: span 2;
+    justify-self: center;
+    width: 100%;
+  }
+
+  /* Navbar turns vertical */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: var(--charcoal-black);
+  }
+
+  .nav-links {
+    display: none;              /* hidden by default */
+    flex-direction: column;     /* vertical on mobile */
+    gap: 2rem;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .landing-header .header-cta h1 {
+    font-size: 30px;
+  }
+
+    .landing-header .header-cta .icons-button{
+      width: 100%;
+    }
+
+  .landing-header .header-cta button {
+    font-size: 12px;
+  }
+
+  .page-header h1 {
+    font-size: 33px;
+  }
+
+}
