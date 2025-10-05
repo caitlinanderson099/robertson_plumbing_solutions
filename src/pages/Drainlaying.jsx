@@ -11,6 +11,7 @@ const Drainlaying = () => {
         description="Professional plumbing services in NZ"
         keywords="plumbing, NZ, Robertson"
         author="Robertson Plumbing Solutions"
+        image="http://localhost:5173/logo-images/logo.svg"
       />
       <div>
         <PageHeader 

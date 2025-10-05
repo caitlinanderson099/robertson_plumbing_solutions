@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SEO = ({ title, description, keywords, author }) => {
+const SEO = ({ title, description, keywords, author, image }) => {
   useEffect(() => {
     if (title) document.title = title;
 
@@ -33,7 +33,16 @@ const SEO = ({ title, description, keywords, author }) => {
       }
       metaAuthor.content = author;
     }
-  }, [title, description, keywords, author]);
+   if (image) {
+      let metaImage = document.querySelector("meta[property='og:image']");
+      if (!metaImage) {
+        metaImage = document.createElement("meta");
+        metaImage.setAttribute("property", "og:image");
+        document.head.appendChild(metaImage);
+      }
+      metaImage.content = image;
+    }
+  }, [title, description, keywords, author, image]);
 
   return null; // no actual JSX rendered
 };
