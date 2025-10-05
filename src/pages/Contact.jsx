@@ -101,7 +101,7 @@ const Contact = () => {
       <div className="contact-page">
       <PageHeader 
         title="Contact us" 
-        backgroundImage="/bg-images/contact-bg.jpg" 
+        backgroundImage="/bg-images/contact-bg.webp" 
       />
       <div className="contact-content">
         <ContactForm/>

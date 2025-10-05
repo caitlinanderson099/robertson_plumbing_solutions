@@ -15,7 +15,7 @@ const Drainlaying = () => {
       <div>
         <PageHeader 
           title="Drainlaying" 
-          backgroundImage="/bg-images/drainlaying-bg.jpg" 
+          backgroundImage="/bg-images/drainlaying-bg.webp" 
         />      
       </div>
     </>

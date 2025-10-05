@@ -52,12 +52,12 @@ const TestimonialGallery = () => {
 
 const GallerySection = () => {
   const images = [
-    "/project-images/bathroom-reno.jpeg",
-    "/project-images/drainlaying-img.jpeg",
-    "/project-images/bathroom-reno2.jpeg",
-    "/project-images/bathroom-reno.jpeg",
-    "/project-images/drainlaying-img.jpeg",
-    "/project-images/bathroom-reno2.jpeg",
+    "/project-images/bathroom-reno.webp",
+    "/project-images/drainlaying-img.webp",
+    "/project-images/bathroom-reno2.webp",
+    "/project-images/bathroom-reno.webp",
+    "/project-images/drainlaying-img.webp",
+    "/project-images/bathroom-reno2.webp",
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -124,7 +124,7 @@ const GallerySection = () => {
     <div className='testimonial-gallery-page'>
         <PageHeader
         title="Testimonials & Gallery"
-        backgroundImage="/bg-images/testimonial-bg.jpg"
+        backgroundImage="/bg-images/testimonial-bg.webp"
         />
         <TestimonialSection/>
         {/* <ImageScroll2/> */}

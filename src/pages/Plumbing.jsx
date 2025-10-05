@@ -15,7 +15,7 @@ const Plumbing = () => {
       <div>
         <PageHeader 
           title="Plumbing" 
-          backgroundImage="/bg-images/plumbing-bg.png" 
+          backgroundImage="/bg-images/plumbing-bg.webp" 
         />      
       </div>
     </>

@@ -16,7 +16,7 @@ const Home = () => {
 <div className='home-page'>
       <LandingHeader
         title="Robertson Plumbing Solutions Ltd "
-        backgroundImage="/bg-images/landing-bg.jpg"
+        backgroundImage="/bg-images/landing-bg.webp"
       />
     </div>    </>
   );

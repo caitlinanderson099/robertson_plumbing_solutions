@@ -79,7 +79,7 @@ const About = () => {
     <div className='about-page'>
       <PageHeader 
         title="About us" 
-        backgroundImage="/bg-images/about-bg.jpg" 
+        backgroundImage="/bg-images/about-bg.webp" 
       />  
       <ServiceSection/>  
       {/* <ImageScroll1/> */}
