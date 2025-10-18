@@ -84,37 +84,11 @@ button:hover {
   color: var(--charcoal-black);
   font-weight: 600;
   text-decoration: none;
-  position: relative; /* needed for pseudo-elements */
-  padding-bottom: 6px; /* gives space for the lines */
+  display: inline-block; /* ✅ allows padding and multi-word text */
+  padding: 0.5rem 1rem;  /* ✅ makes them clickable and roomy */
+  white-space: nowrap;   /* ✅ prevents awkward line breaks */
 }
-/* First line */
-.nav-links a::before,
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px; /* line thickness */
-  background-color: var(--yellow-color);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-/* Position the two lines */
-.nav-links a::before {
-  bottom: 0;
-}
-.nav-links a::after {
-  bottom: -4px; /* space between the lines */
-}
-/* Hover effect */
-.nav-links a:hover::before,
-.nav-links a:hover::after {
-  transform: scaleX(1);
-}
-.nav-links a.active::before,
-.nav-links a.active::after {
-  transform: scaleX(1);
-}
+
 
 /* ----------------- Page Header CSS --------------- */
 .page-header {

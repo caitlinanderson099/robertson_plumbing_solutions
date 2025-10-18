@@ -36,43 +36,34 @@ const Navbar = () => {
       {/* Nav Links */}
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
         <NavLink 
+          to="/" 
+          onClick={() => setIsOpen(false)} 
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Home
+        </NavLink>
+
+        <NavLink 
           to="/about" 
           onClick={() => setIsOpen(false)} 
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          About us
+          About Us
         </NavLink>
 
         <NavLink 
-          to="/plumbing" 
           onClick={() => setIsOpen(false)} 
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          Plumbing
+          Our services
         </NavLink>
 
         <NavLink 
-          to="/drainlaying" 
+          to="/contactus" 
           onClick={() => setIsOpen(false)} 
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          Drainlaying
-        </NavLink>
-
-        <NavLink 
-          to="/centralheating" 
-          onClick={() => setIsOpen(false)} 
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          Central Heating
-        </NavLink>
-
-        <NavLink 
-          to="/testimonialsandgallery" 
-          onClick={() => setIsOpen(false)} 
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          Testimonials & Gallery
+          Contact us
         </NavLink>
 
         <button 
@@ -82,7 +73,7 @@ const Navbar = () => {
           navigate("/contactus");
           }}
         >
-          Contact us
+          Get a quote
         </button>
       </div>
     </nav>
