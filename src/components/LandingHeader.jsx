@@ -9,8 +9,8 @@ const LandingHeader = ({ title, backgroundImage }) => {
     backgroundAttachment: 'fixed',
     position: 'relative',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     color: '#F3F4F6',
   };
 

@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-    const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false); // mobile menu toggle
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // desktop dropdown
+  const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
+  // Detect screen size for responsive behavior
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="navbar">
@@ -35,45 +42,153 @@ const Navbar = () => {
 
       {/* Nav Links */}
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <NavLink 
-          to="/" 
-          onClick={() => setIsOpen(false)} 
+        <NavLink
+          to="/"
+          onClick={() => setIsOpen(false)}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           Home
         </NavLink>
 
-        <NavLink 
-          to="/about" 
-          onClick={() => setIsOpen(false)} 
+        <NavLink
+          to="/about"
+          onClick={() => setIsOpen(false)}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           About Us
         </NavLink>
 
-        <NavLink 
-          onClick={() => setIsOpen(false)} 
+        {/* ✅ Our Services Dropdown */}
+        <div
+          className={`dropdown ${isDropdownOpen ? "open" : ""}`}
+          onMouseEnter={() => !isMobile && setIsDropdownOpen(true)}
+          onMouseLeave={() => !isMobile && setIsDropdownOpen(false)}
+        >
+          {isMobile ? (
+            <>
+              {/* Mobile — show main link */}
+              
+              {/* Mobile — show submenu items inline */}
+              <div className="dropdown-menu mobile-visible">
+                <NavLink
+                    to="/plumbing"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsOpen(false);
+                    }}                  
+                >
+                  Plumbing
+                </NavLink>
+                  <NavLink
+                    to="/centralheating"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsOpen(false);
+                    }}
+                  >
+                    Central heating
+                  </NavLink>
+                  <NavLink
+                    to="/hotwatersystems"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsOpen(false);
+                    }}
+                  >
+                    Hot water systems
+                  </NavLink>
+                  <NavLink
+                    to="/rural"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsOpen(false);
+                    }}
+                  >
+                    Rural
+                  </NavLink>
+                  <NavLink
+                    to="/drainage"
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsOpen(false);
+                    }}
+                  >
+                    Drainage
+                  </NavLink>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Desktop — dropdown toggle */}
+              <span
+                className="dropdown-toggle"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                Services
+              </span>
+
+              {isDropdownOpen && (
+                <div className="dropdown-menu">
+                  <NavLink
+                    to="/plumbing"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Plumbing
+                  </NavLink>
+                  <NavLink
+                    to="/centralheating"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Central heating
+                  </NavLink>
+                  <NavLink
+                    to="/hotwatersystems"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Hot water systems
+                  </NavLink>
+                  <NavLink
+                    to="/rural"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Rural
+                  </NavLink>
+                  <NavLink
+                    to="/drainage"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Drainage
+                  </NavLink>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+
+        <NavLink
+          to="/testimonialsandgallery"
+          onClick={() => setIsOpen(false)}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          Our services
+          Testimonials & Gallery
         </NavLink>
 
-        <NavLink 
-          to="/contactus" 
-          onClick={() => setIsOpen(false)} 
+        <NavLink
+          to="/contactus"
+          onClick={() => setIsOpen(false)}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          Contact us
+          Contact Us
         </NavLink>
 
-        <button 
-          className="cta" 
+        <button
+          className="cta"
           onClick={() => {
-          setIsOpen(false);
-          navigate("/contactus");
+            setIsOpen(false);
+            navigate("/contactus");
           }}
         >
-          Get a quote
+          Get a Quote
         </button>
       </div>
     </nav>

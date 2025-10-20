@@ -23,6 +23,7 @@ body {
   --yellow-color: #FDDF48;
 }
 
+
 /* ------------- Button CSS --------------- */
 button {
    padding: 10px;
@@ -43,6 +44,35 @@ button:hover {
   background-color: #e1bf15;
 }
 
+/* ----------------- Footer CSS --------------- */
+footer {
+  border-top: 1px solid var(--charcoal-black);
+  margin-top: 20px;
+  .number-banner {
+    width: 100%;
+    background-color: var(--yellow-color);
+    color: var(--charcoal-black);
+    padding: 10px;
+    text-align: center;
+  }
+  .footer-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 1rem;
+    .logo {
+      width: 20%;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
 /* ----------------- Navbar CSS --------------- */
 .navbar {
   display: flex;
@@ -51,9 +81,8 @@ button:hover {
   gap: 4rem;               /* spacing between logo, links, and CTA */
   padding: 10px;
   background: var(--light-grey);
-  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  border-bottom: 1px solid var(--charcoal-black);
+  z-index: 1000;
   flex-direction: row; /* desktop: horizontal */
 }
 /* Logo + hamburger inline */
@@ -87,26 +116,53 @@ button:hover {
   display: inline-block; /* ✅ allows padding and multi-word text */
   padding: 0.5rem 1rem;  /* ✅ makes them clickable and roomy */
   white-space: nowrap;   /* ✅ prevents awkward line breaks */
+  transition: all 0.3s ease;
 }
 
+.nav-links a:hover {
+  opacity: 60%;
+  transition: all 0.3s ease;
+}
 
-/* ----------------- Page Header CSS --------------- */
-.page-header {
+/* Dropdown container */
+.dropdown {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 400px;
+  display: inline-block;
+}
+
+/* Dropdown toggle (desktop) */
+.dropdown-toggle {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* Dropdown menu (desktop) */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #F3F4F6;
-  position: relative;
-
-  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
+
+.dropdown-menu a {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #111827;
+}
+
+.dropdown-menu a:hover {
+  background: var(--yellow-color);
+  opacity: 100%;
+}
+
+/* for home page image overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -122,14 +178,17 @@ button:hover {
   font-size: 3rem;
   text-align: center;
   margin: 0;
-}
+} 
 
 /* ----------------- Landing Page Header CSS --------------- */
 .landing-header {
   box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
   -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
-  height: 90vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
     z-index: 1;
   }
@@ -191,53 +250,126 @@ button:hover {
   color: var(--charcoal-black);
 }
 
-/* ----------------- Section Header Title CSS -------------- */
-.section-header {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-size: 1.6em;
-  color: var(--charcoal-black);
+/* ------------- About Us Page CSS -------------- */
+.about-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  height: 80vh;
   margin-bottom: 20px;
 }
 
-/* ------------- About Us Page CSS -------------- */
-.services-section .services-cont {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 1rem;
-  align-items: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
+.about-section .left img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  object-position: center;
+  border-bottom-right-radius: 8px;
 }
-.services-section .services-cont .service-item {
+
+.about-section .right {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1rem;
-}
-.services-section .services-cont .service-item svg {
-  font-size: 4.5em;
-  background-color: var(--yellow-color);
-  padding: 20px;
-  border-radius: 50%;
-}
-.history-section {
+  gap: 40px;
   padding: 30px;
 }
-.history-section .section-header {
-  text-align: right;
+
+.about-section .right .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
-.history-section .history-content {
+
+.about-section .right .header hr {
+  width: 60%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.service-section {
+  margin: 5rem auto;
+  padding: 30px;
+}
+
+.service-section .header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-section .header h1 {
+  font-size: 2rem;
+}
+
+.service-section .header hr {
+    width: 60%;
+  height: 3px;
+  background: var(--yellow-color);
+  border: none;
+  margin: 0.5rem auto 0; /* ✅ centers the hr horizontally */
+}
+
+/* Accordion Styles */
+.accordion {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: center;
 }
-.history-section .history-content button {
-  width: 50%;
+
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.accordion-title {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #f7f7f7;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* .accordion-title:hover {
+  background: #eaeaea;
+} */
+
+.accordion-title.active {
+  background: var(--yellow-color);
+  color: var(--charcoal-black);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 0 1.2rem;
+  background: #fff;
+}
+
+.accordion-content.show {
+  max-height: 400px;
+  padding: 1rem 1.2rem;
+}
+
+.accordion-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.arrow {
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
 /* ----------- Plumbing Page CSS ------------- */
@@ -272,83 +404,156 @@ button:hover {
 
 
 /* ----------- Contact Us Page CSS ------------- */
-.contact-form-container {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: var(--light-grey);
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 90%; /* keeps padding on mobile */
-}
-/* Form layout */
-.contact-form {
+.contact-content {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4rem 5%;
+  gap: 3rem;
+  background-color: #f9f9f9;
 }
-/* Labels */
-.contact-form label {
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+
+/* ===== LEFT SIDE ===== */
+.left-side {
+  flex: 1;
+  max-width: 400px;
+}
+
+.left-side .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.left-side .header hr {
+  width: 60%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.left-side p {
+  margin-bottom: 1.5rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  font-size: 2.2em;
   color: var(--charcoal-black);
 }
-.contact-form label span {
-  color: crimson;
-  font-weight: bold;
+
+.socials svg {
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+  background-color: var(--yellow-color);
+  padding: 4px;
+  border-radius: 50%;
+
 }
-/* Inputs, Textareas, Select */
+
+.socials svg:hover {
+  transform: scale(1.1);
+  color: #1d232e;
+}
+
+/* ===== RIGHT SIDE ===== */
+.right-side {
+  flex: 2;
+}
+
+.contact-form-container {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== FORM GRID ===== */
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem 2.5rem;
+}
+
+/* Labels and Inputs */
+.label-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-group label {
+  font-weight: 600;
+  color: var(--charcoal-black);
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.label-group span {
+  color: red;
+  font-weight: 600;
+}
+
+.label-group hr {
+  width: 70%;
+  margin-left: auto; /* aligns the half-width line to the right */  height: 2px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin: 0.3rem 0 0.6rem;
+}
+
+/* Inputs, selects, textareas */
 .contact-form input,
-.contact-form textarea,
-.contact-form select {
+.contact-form select,
+.contact-form textarea {
   width: 100%;
-  padding: 0.9rem 1rem;
+  padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   font-size: 1rem;
-  transition: all 0.2s ease-in-out;
-}
-/* Input focus */
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-  border-color: var(--yellow-color);
-  outline: none;
-}
-/* Textarea */
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
-  font-family: "League Spartan", sans-serif;
-}
-.contact-form-section {
-  padding: 20px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  background: #fafafa;
 }
 
-.form-heading {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--yellow-color);
+  outline: none;
+  background: #fff;
 }
-.socials {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+
+/* Textarea styling */
+.contact-form textarea {
+  resize: none;
+  height: 50px;
 }
-.socials svg {
-  font-size: 2.5em;
+
+/* ===== BUTTON ===== */
+.contact-form button {
+  grid-column: 1 / -1;
+  width: 100%;
+  justify-self: center;
   background-color: var(--yellow-color);
   color: var(--charcoal-black);
-  padding: 9px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-.socials svg:hover {
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  transform: translateY(-10px);
-  background-color: #e1bf15;
+  margin-top: 1rem;
 }
+
+.contact-form button:hover {
+  transform: scale(1.03);
+  color: #1d232e;
+}
+
 /* ------------- TESTIMONIALS & GALLERY PAGE ------------- */
 
 .testimonial-section .section-header {
@@ -474,6 +679,34 @@ button:hover {
     background-attachment: scroll;
   }
 
+  .dropdown-menu {
+    position: static;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* Center like other nav links */
+    gap: 2rem;                 /* Match the nav-links gap */
+    padding: 0;                /* Remove any padding offset */
+    margin: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 0;                /* Remove left padding */
+    color: inherit;            /* Match nav link color */
+    text-align: center;        /* Align text same as others */
+  }
+
+  .dropdown-menu.mobile-visible {
+    display: flex;
+  }
+
+  .dropdown-toggle {
+    display: none; /* Hide dropdown toggle arrow on mobile */
+  }
+
 
   .section-header h2 {
     font-size: 28px;
@@ -492,34 +725,145 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
+  /* ------------ CONTACT PAGE ---------------- */
+    .contact-content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  /* Keep left-side text left-aligned */
+  .left-side {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .left-side .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .left-side .header hr {
+    width: 40%;
+    margin: 0.5rem 0 1.5rem 0;
+  }
+
+  .left-side p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .socials {
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1.8rem;
+  }
+
+  /* Right side spans full width */
+  .right-side {
+    width: 100%;
+  }
+
+  /* Stack form fields vertically */
   .contact-form {
-    display: grid;
-    grid-template-columns: 1fr; /* ✅ one column only on mobile */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  /* Full-width fields */
-  .contact-form label,
+  /* Inputs and text areas fit mobile layout */
   .contact-form input,
-  .contact-form textarea,
   .contact-form select,
-  .contact-form button {
-    grid-column: 1 / -1;  /* ✅ full width */
-    width: 100%;
-    box-sizing: border-box;
-    display: block;
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem;
   }
 
-  .contact-form select {
-    border: 1px solid #ddd;
-    color: var(--charcoal-black);
+  /* hr lines full width for mobile consistency */
+  .label-group hr {
+    width: 100%;
+    margin: 0.3rem 0 0.6rem;
   }
 
-  /* Button aligned full width */
+  /* Button full width but left aligned visually */
   .contact-form button {
-    grid-column: span 2;
-    justify-self: center;
     width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    align-self: flex-start;
+  }
+
+  /* Slightly tighter form padding */
+  .contact-form-container {
+    padding: 2rem 1.5rem;
+  }
+
+    .about-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .about-section .left img {
+    height: 50vh; /* Adjust height for mobile */
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 8px; /* Optional rounded corners for mobile */
+  }
+
+  .about-section .right {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .about-section .right .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-section .right .header hr {
+    width: 80%;
+    height: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+   .service-section {
+    padding: 20px;
+    margin: 2rem auto;
+  }
+
+  .service-section .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .service-section .header hr {
+    width: 80%;
+    height: 2px;
+  }
+
+  .accordion-title {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .accordion-content {
+    padding: 0 1rem;
+  }
+
+  .accordion-content.show {
+    padding: 0.8rem 1rem;
+    max-height: 500px; /* Allow more room for longer content on mobile */
+  }
+
+  .accordion-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
   }
 
   /* Navbar turns vertical */

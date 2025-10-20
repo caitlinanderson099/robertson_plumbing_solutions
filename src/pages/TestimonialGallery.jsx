@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PageHeader from '../components/PageHeader'
 import { FaStar } from 'react-icons/fa'
 import SEO from '../components/SEO';
 
@@ -109,9 +108,6 @@ const GallerySection = () => {
   );
 };
 
-     // Image Scroll Section #2
-  const ImageScroll2 = () => <div className="image-scroll2"></div>
-
 // MASTER RETURN
     return (
         <>
@@ -123,12 +119,7 @@ const GallerySection = () => {
         image="http://localhost:5173/logo-images/logo.svg"
       />
     <div className='testimonial-gallery-page'>
-        <PageHeader
-        title="Testimonials & Gallery"
-        backgroundImage="/bg-images/testimonial-bg.webp"
-        />
         <TestimonialSection/>
-        {/* <ImageScroll2/> */}
         <GallerySection/>
         
     </div>

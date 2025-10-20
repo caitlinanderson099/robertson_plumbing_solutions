@@ -7,10 +7,15 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Plumbing from './pages/Plumbing';
-import Drainlaying from './pages/Drainlaying'
+import Drainage from './pages/Drainage'
 import CentralHeating from './pages/CentralHeating'
 import Contact from './pages/Contact'
 import TestimonialGallery from './pages/TestimonialGallery';
+import HotWaterSystems from './pages/HotWaterSystems'
+import Rural from './pages/Rural';
+
+// import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -19,12 +24,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>}/>
+        {/* Drop Down Pages */}
         <Route path="/plumbing" element={<Plumbing/>}/>
-        <Route path="/drainlaying" element={<Drainlaying/>}/>
+        <Route path="/drainage" element={<Drainage/>}/>
         <Route path="/centralheating" element={<CentralHeating/>}/>
+        <Route path="/hotwatersystems" element={<HotWaterSystems/>}/>
+        <Route path="/rural" element={<Rural/>}/>
+        {/* Normal Pages */}
         <Route path="/contactus" element={<Contact/>}/>
         <Route path="/testimonialsandgallery" element={<TestimonialGallery/>}/>
       </Routes>
+      {/* <Footer/> */}
     </Router>
   );
 }
