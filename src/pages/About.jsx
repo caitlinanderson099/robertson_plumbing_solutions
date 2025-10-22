@@ -8,12 +8,19 @@ import { MdGrid4X4 } from "react-icons/md";
 import SEO from '../components/SEO';
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const About = () => {
 
   // About Us Section
   const AboutSection = () => {
+    const navigate = useNavigate();
+
+    const handleQuote = (e)=> {
+        e.preventDefault();
+        navigate('/contactus');
+    }
     return (
       <div className="about-section">
 
@@ -31,6 +38,7 @@ const About = () => {
             We have over 20 years’ experience in residential and commercial projects, and in every job, we take the time to discuss your individual requirements and deliver tailored solutions that last. </p>
           <p>
             Whether it’s a leak, renovation or commercial project, our reliable team is here to provide exceptional plumbing and heating solutions with great communication and a commitment to quality.</p>
+          <button onClick={handleQuote}>Get in touch with us today</button>
         </div>
       </div>
     )
@@ -41,83 +49,18 @@ const About = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
    const services = [
+    {
+  "title": "Plumbing",
+  "description": "We offer a full range of plumbing solutions — from everyday household needs to large-scale commercial maintenance. Our services include tap and pipework repairs, bathroom renovations, water main fixes, and more. \n\nKey services:\n• Tap repairs and replacements\n• Pipework repairs and replacements\n• Leaking water main repairs\n• Bathroom renovations\n• Waste disposal units / Insinkerators\n• Spouting, gutters, and downpipes\n• Water pressure troubleshooting\n• Rainwater harvesting systems\n• Earthquake-ready emergency water tanks\n• Pre-purchase plumbing inspections\n• Commercial plumbing and maintenance\n• Emergency and after-hours services"
+},
   {
-    title: "Plumbing",
-    description: [
-      "We provide a range of plumbing solutions from everyday household services to commercial plumbing and maintenance, including:",
-      "• Tap repairs and replacements",
-      "• Pipework repairs and replacements",
-      "• Leaking water main repairs",
-      "• Bathroom renovations",
-      "• Waste disposal/insinkerators",
-      "• Spouting, gutters and downpipes",
-      "• Water pressure problems",
-      "• Rainwater harvesting",
-      "• Earthquake emergency rainwater tanks",
-      "• Pre-purchase inspections",
-      "• Commercial maintenance and plumbing",
-      "• Emergency/Out of hours services"
-    ]
-  },
+  "title": "Central Heating",
+  "description": "Air to Water Heat Pumps:\n• Energy-efficient heating for homes and businesses\n• Extracts heat from air to supply hot water and warmth\n• Quiet, reliable, and suitable for various property sizes\n\nRadiator Heating Solutions:\n• Gentle, consistent warmth using hot water\n• Energy-efficient and low-maintenance\n• Suitable for renovations and new builds\n\nUnderfloor Heating:\n• Even heat distribution beneath floors\n• Works with many flooring types\n• Low maintenance and quiet operation\n\nContact our team for expert advice and a free quote."
+},
   {
-    title: "Central Heating",
-     "description": [
-    "Air to Water Heat Pumps",
-    "Energy-efficient heating for homes and businesses, extracting heat from the air to supply hot water and warmth—even in cold conditions.",
-    "Uses electricity to move heat rather than generate it, reducing energy bills and environmental impact.",
-    "Modern models are quiet, reliable, and suitable for various property sizes, offering year-round comfort with lower running costs.",
-    
-    "Radiator Heating Solutions",
-    "Modern radiators provide gentle, consistent warmth using hot water. They are energy-efficient, low-maintenance, quiet, and adaptable to different property sizes and styles.",
-    "Key benefits:",
-    "• Even, comfortable heat",
-    "• Energy-efficient",
-    "• Low maintenance",
-    "• Suitable for renovations and new builds",
-    
-    "Underfloor Heating",
-    "Circulates hot water beneath floors for even, cozy warmth throughout your space. Ideal for new builds or renovations, compatible with many flooring types, and quiet to operate.",
-    "Key benefits:",
-    "• Even heat distribution",
-    "• Energy-efficient",
-    "• Low maintenance and quiet",
-    "• Works with various flooring types",
-    
-    "Contact our team for expert advice and a free quote on any system."
-  ]
-  },
-  {
-    title: "Hot Water Systems",
-   "description": [
-    "Hot Water Systems",
-    "Solutions for efficient hot water in homes and businesses.",
-    
-    "Heat Pump Hot Water Cylinders",
-    "Transfers heat from air to water for energy savings and eco-friendly operation.",
-    "Key benefits:",
-    "• Up to 70% energy savings",
-    "• Backup electric element for consistent supply",
-    "• Provides heating/cooling",
-    "• Eligible for efficiency incentives",
-    
-    "Electric Hot Water Cylinders",
-    "Reliable electric tanks for consistent hot water.",
-    "Key benefits:",
-    "• Flexible sizing",
-    "• Energy-efficient",
-    "• Easy installation",
-    "• Safety features included",
-    
-    "LPG & Natural Gas Continuous Flow (Infinity) Systems",
-    "Heats water on demand for endless supply.",
-    "Key benefits:",
-    "• Continuous hot water",
-    "• Energy and cost savings",
-    "• Compact installation",
-    "• Safe, precise temperature control",
-    "• Eco-friendly operation"
-  ]
-  },
+  "title": "Hot Water Systems",
+  "description": "Heat Pump Hot Water Cylinders:\n• Transfers heat from air to water for energy savings\n• Up to 70% energy savings\n• Backup electric element for consistent supply\n• Provides heating/cooling\n• Eligible for efficiency incentives\n\nElectric Hot Water Cylinders:\n• Reliable electric tanks for consistent hot water\n• Flexible sizing\n• Energy-efficient\n• Easy installation\n• Safety features included\n\nLPG & Natural Gas Continuous Flow (Infinity) Systems:\n• Heats water on demand for endless supply\n• Continuous hot water\n• Energy and cost savings\n• Compact installation\n• Safe, precise temperature control\n• Eco-friendly operation"
+},
   {
     title: "Rural",
     "description": [
@@ -180,27 +123,33 @@ const About = () => {
       </div>
 
       <div className="accordion">
-        {services.map((service, index) => (
-          <div key={index} className="accordion-item">
-            <button
-              className={`accordion-title ${activeIndex === index ? "active" : ""}`}
-              onClick={() => toggleAccordion(index)}
-            >
-              {service.title}
-              <span className="arrow">{activeIndex === index ? "−" : "+"}</span>
-            </button>
+  {services.map((service, index) => (
+    <div key={index} className="accordion-item">
+      <a
+        href="#"
+        role="button"
+        className={`accordion-title ${activeIndex === index ? "active" : ""}`}
+        onClick={(e) => {
+          e.preventDefault(); // prevents jump to top
+          toggleAccordion(index);
+        }}
+      >
+        {service.title}
+        <span className="arrow">{activeIndex === index ? "−" : "+"}</span>
+      </a>
 
-            <div
-              className={`accordion-content ${
-                activeIndex === index ? "show" : ""
-              }`}
-            >
-{service.description.map((line, i) => (
-    <p key={i}>{line}</p>
-  ))}            </div>
-          </div>
-        ))}
+      <div
+        className={`accordion-content ${
+          activeIndex === index ? "show" : ""
+        }`}
+      >
+        <p className="accordion-text">{service.description}</p>
+
       </div>
+    </div>
+  ))}
+</div>
+
     </div>
   );
 };

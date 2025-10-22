@@ -1,112 +1,151 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaStar } from 'react-icons/fa'
 import SEO from '../components/SEO';
 
 // SwiperJS imports
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 const TestimonialGallery = () => {
 
-// Testimonials Section
-    const TestimonialSection = () => {
-            return (
-            <div className="testimonial-section">
-                <div className="section-header">
-                <h2>Testimonials</h2>
-                <hr />
-                </div>
-                <div className="review-cont">
-                <div className="review-item">
-                    <h3>John Doe, Newtown Wellington</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit..."</p>
-                    <div className="star-rating">
-                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-                    </div>
-                </div>
-        
-                <div className="review-item">
-                    <h3>Jane Smith, Porirua</h3>
-                    <p>"Donec quam felis, ultricies nec, pellentesque eu, pretium quis..."</p>
-                    <div className="star-rating">
-                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-                    </div>
-                </div>
-        
-                <div className="review-item">
-                    <h3>Sam Lee, Lower Hutt</h3>
-                    <p>"Cum sociis natoque penatibus et magnis dis parturient montes..."</p>
-                    <div className="star-rating">
-                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-                    </div>
-                </div>
-                </div>
+const TestimonialSection = () => {
+  const testimonials = [
+    {
+      name: "John Doe, Newtown Wellington",
+      text: "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit...”",
+    },
+    {
+      name: "Jane Smith, Porirua",
+      text: "“Donec quam felis, ultricies nec, pellentesque eu, pretium quis...”",
+    },
+    {
+      name: "Sam Lee, Lower Hutt",
+      text: "“Cum sociis natoque penatibus et magnis dis parturient montes...”",
+    },
+    {
+      name: "Olivia Brown, Petone",
+      text: "“Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet.”",
+    },
+    {
+      name: "Michael Green, Upper Hutt",
+      text: "“Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.”",
+    },
+  ];
+
+  return (
+    <div className="testimonial-marquee-section">
+      <div className="header">
+            <h1>What our customers say</h1>
+            <hr />
+          </div>
+
+      <div className="marquee-container">
+        <div className="marquee-track">
+          {[...testimonials, ...testimonials].map((review, index) => (
+            <div className="review-item" key={index}>
+              <h3>{review.name}</h3>
+              <p>{review.text}</p>
+              <div className="star-rating">
+                <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+              </div>
             </div>
-            )
-    };
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 
 const GallerySection = () => {
   const images = [
-    "/project-images/bathroom-reno.webp",
-    "/project-images/drainlaying-img.webp",
-    "/project-images/bathroom-reno2.webp",
-    "/project-images/bathroom-reno.webp",
-    "/project-images/drainlaying-img.webp",
-    "/project-images/bathroom-reno2.webp",
-  ];
+    "/project-images/central-heating1.JPG",
+    "/project-images/spouting1.JPG",
+    "/project-images/infinity2.jpg",
+    "/project-images/underfloor-heating3.JPG",
+    "/project-images/spouting3.JPG",
+    "/project-images/central-heating7.JPG",
+      "/project-images/infinity5.jpg",
+    "/project-images/underfloor-heating2.JPG"
+    ];
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleNext = () => {
+    setSelectedIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const navigate = useNavigate();
+  
+      const handleQuote = (e)=> {
+          e.preventDefault();
+          navigate('/contactus');
+      }
 
   return (
     <div className="gallery-section">
-      <div className="section-header">
-        <h2>Gallery</h2>
-        <hr />
+      {/* Left column */}
+      <div className="gallery-left">
+        <div className="header">
+            <h1>Our gallery</h1>
+            <hr />
+          </div>
+        <p>
+          Take a look at some of our recent work. From full bathroom
+          renovations and drainage installations to heating systems and
+          maintenance projects, our gallery showcases the high-quality results
+          we deliver for homes and businesses across the Wellington region.
+        </p>
+          <button onClick={handleQuote}>Get in touch with us today</button>
       </div>
 
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={20}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        breakpoints={{
-          640: { slidesPerView: 2 }, // 2 on tablets
-          1024: { slidesPerView: 3 }, // 3 on desktops
-        }}
-        className="gallery-swiper"
-      >
-        {images.map((src, index) => (
-          <SwiperSlide key={index}>
-            <img
-              src={src}
-              alt={`Gallery ${index + 1}`}
-              className="gallery-img"
-              onClick={() => setSelectedImage(src)} // open modal
-              style={{ cursor: "pointer" }}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {/* Right column */}
+      <div className="gallery-right">
+        <div className="main-gallery">
+          {/* Main image */}
+          <div className="main-image-wrapper">
+            <button className="nav-btn prev" onClick={handlePrev}><FaChevronLeft/></button>
 
-      {/* Modal */}
-      {selectedImage && (
-        <div className="modal-overlay" onClick={() => setSelectedImage(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedImage(null)}>
-              ✕
-            </button>
-            <img src={selectedImage} alt="Full View" className="modal-img" />
+            <img
+              key={images[selectedIndex]} // triggers fade transition
+              src={images[selectedIndex]}
+              alt="Selected"
+              className="main-image fade-in"
+            />
+
+            <button className="nav-btn next" onClick={handleNext}><FaChevronRight/></button>
+          </div>
+
+          {/* Thumbnails */}
+          <div className="thumbnail-row">
+            {images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Thumbnail ${index + 1}`}
+                className={`thumbnail ${
+                  index === selectedIndex ? "active" : ""
+                }`}
+                onClick={() => setSelectedIndex(index)}
+              />
+            ))}
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
+
+
 
 // MASTER RETURN
     return (
@@ -119,8 +158,9 @@ const GallerySection = () => {
         image="http://localhost:5173/logo-images/logo.svg"
       />
     <div className='testimonial-gallery-page'>
+              <GallerySection/>
+
         <TestimonialSection/>
-        <GallerySection/>
         
     </div>
     </>
