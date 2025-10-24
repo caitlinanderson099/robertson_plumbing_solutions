@@ -4,6 +4,29 @@ import SEO from '../components/SEO';
 
 const Plumbing = () => {
 
+  // top section
+  const TopSection = () => {
+    return (
+      <div className="top-section">
+
+        <div className="left">
+          <img src="/project-images/commercial-plumbing2.jpg" alt="" />
+        </div>
+
+        <div className="right">
+          <div className="header">
+            <h1>Plumbing</h1>
+            <hr />
+          </div>
+          <div>
+            <p>npsbvosbvobvibvisbvisbvsivbsibcsivbivbiavbaivbiavbaivbaivbi</p>
+            <p>npsbvosbvobvibvisbvisbvsivbsibcsivbivbiavbaivbiavbaivbaivbi</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <>
@@ -15,10 +38,7 @@ const Plumbing = () => {
         image="http://localhost:5173/logo-images/logo.svg"
       />
         <div className="plumbing-page">
-          <div className="section-header">
-            <h2>Our plumbing services</h2>
-            <hr />
-          </div> 
+          <TopSection/>
         </div>
         
     </>
