@@ -10,6 +10,8 @@ import SEO from '../components/SEO';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import CertificationSection from '../components/CertificationSection';
+
 
 const About = () => {
 
@@ -165,6 +167,7 @@ const About = () => {
     <div className='about-page'>
     <AboutSection/>
     <ServiceSection/>
+    <CertificationSection/>
     </div>
     </>
   )

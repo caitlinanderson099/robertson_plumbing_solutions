@@ -173,19 +173,23 @@ footer {
   z-index: 1;
 }
 .header-title {
-  position: relative;
   z-index: 2;
   font-size: 3rem;
-  text-align: center;
   margin: 0;
+  text-align: center;
 } 
+
+.header-subheading {
+  font-size: 1.2rem;
+  text-align: center;
+}
 
 /* ----------------- Landing Page Header CSS --------------- */
 .landing-header {
   box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
   -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
-  height: 100vh;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,56 +197,18 @@ footer {
     z-index: 1;
   }
 }
+
 .landing-header .header-cta {
+  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 60px;
-  z-index: 1;
-  width: 100%;
+  gap: 2rem;
 }
-.landing-header .header-cta .icons-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 30%;
-}
+
 .landing-header .header-cta img {
   width: 200px;
 }
-.landing-header .header-cta .social-icons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-.landing-header .header-cta .social-icons .icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-.landing-header .header-cta .social-icons svg {
-  font-size: 2em;
-  background-color: var(--yellow-color);
-  color: var(--charcoal-black);
-  transition: all 0.3s ease;
-  border-radius: 20%;
-  padding: 5px;
-}
-.landing-header .header-cta .social-icons svg:hover {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  transform: translateY(-10px);
-  background-color: #e1bf15;
-}
-.landing-header .header-cta button {
-  z-index: 1000;
-  width: 100%;
-}
-
-
 
 
 /* ------------- About Us Page CSS -------------- */
@@ -413,6 +379,11 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
+    .intro {
+  font-weight: 600;
+  color: #1c3c57;
+  margin-bottom: 1rem;
+}
   }
 }
 
@@ -439,34 +410,39 @@ footer {
   }
 
   .services-cont {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 20px;
+}
 
-    .service-card {
-      border-radius: 10px;
-      background-color: #fff;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.service-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
 
-      h4 {
-        background-color: var(--yellow-color);
-        padding: 10px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        font-size: 1.1rem;
-      }
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  background-color: var(--yellow-color);
+}
 
-      p {
-        padding: 10px;
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-    }
-  }
+.service-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1c3c57; /* matches plumbing / brand tones */
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
 }
 
 /* ----------- Drainlaying Page CSS ------------- */
@@ -891,6 +867,10 @@ footer {
     align-items: flex-start;
   }
 
+  .nav-header img {
+    width: 80%;
+  }
+
   .menu-toggle {
     display: block;
     color: var(--charcoal-black);
@@ -982,19 +962,15 @@ footer {
       width: 90%;
     }
 
-    .services-cont {
-      grid-template-columns: 1fr; /* 1 card per row on mobile */
-      gap: 1.2rem;
-    }
+     .services-cont {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 10px;
+  }
 
-    .service-card {
-      h3 {
-        font-size: 1rem;
-      }
-      p {
-        font-size: 0.9rem;
-      }
-    }
+  .service-card {
+    padding: 1rem;
+  }
   }
 
   /* ------------ CONTACT PAGE CSS ---------------- */

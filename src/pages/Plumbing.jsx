@@ -82,11 +82,11 @@ const Plumbing = () => {
             <hr />
           </div>
           <div className="plumbing-services">
-          <p>At Robertson Plumbing Solutions, we take pride in offering reliable and high-quality plumbing services across the Hutt Valley and wider Wellington region. With over 20 years of experience in both residential and commercial projects, our skilled team understands that every job is unique. We take the time to listen to your needs, ensuring each solution is tailored to suit your home or business — from simple repairs to complete plumbing installations.</p>
+            <p className="intro">Reliable, affordable plumbing and heating solutions for homes and businesses across the Hutt Valley and Wellington region.</p>
 
-          <p>Our team provides a full range of plumbing services, including tap and pipework repairs, bathroom renovations, water main repairs, and emergency callouts. We also handle specialist solutions such as rainwater harvesting systems, earthquake-ready water tanks, and ongoing commercial maintenance. Whether you’re tackling a small household issue or managing a large-scale project, Robertson Plumbing Solutions is committed to delivering quality workmanship, transparent communication, and results that stand the test of time.</p>
+          <p>At Robertson Plumbing Solutions, we’re proud to provide reliable, high-quality plumbing services throughout the Hutt Valley and Wellington region. With over 20 years of residential and commercial experience, our skilled team listens carefully to your needs and delivers tailored solutions that last — from quick repairs to full plumbing installations.</p>
 
-          <p>At Robertson Plumbing Solutions, we believe great service goes beyond fixing pipes — it’s about building trust with every customer. Our locally owned business is founded on honesty, reliability, and attention to detail. From the moment you get in touch, we’ll guide you through the process, provide clear communication, and ensure your project is completed efficiently and to the highest standard. No matter the size or scope of the job, you can count on our experienced team to deliver lasting plumbing solutions with genuine care and professionalism.</p>
+          <p>We offer a complete range of plumbing services, including tap and pipe repairs, bathroom renovations, water main repairs, and emergency callouts. Our team also provides specialist solutions like rainwater harvesting, earthquake-ready water tanks, and regular commercial maintenance. No matter the size of the job, you can count on us for clear communication, quality workmanship, and results built to last.</p>
           </div>
 
         </div>

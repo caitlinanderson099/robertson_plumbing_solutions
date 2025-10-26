@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser'
 import { FaEnvelope, FaFacebook, FaInstagram} from 'react-icons/fa'
 import { FaPhoneVolume } from "react-icons/fa6";
 import SEO from '../components/SEO';
+import CertificationSection from '../components/CertificationSection';
+
 
 const Contact = () => {
   const form = useRef()
@@ -126,6 +128,7 @@ const Contact = () => {
         <div className="right-side">
           <ContactForm/>
         </div>
+        {/* <CertificationSection/> */}
       </div>
     </>
   )
