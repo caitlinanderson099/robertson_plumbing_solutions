@@ -16,7 +16,7 @@ const Home = () => {
       />
       <div className='home-page'>
         <LandingHeader
-          title="Welcome to Robertson Plumbing Solutions Ltd"
+          title="Welcome to Robertson Plumbing Solutions Ltd - work in progress!!"
           subHeading="Our reliable team is here to provide exceptional plumbing and heating solutions with great communication and a commitment to quality."
           backgroundImage="/bg-images/landing-bg.jpg"
         />
