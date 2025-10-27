@@ -80,13 +80,13 @@ const Navbar = () => {
                   Plumbing
                 </NavLink>
                   <NavLink
-                    to="/centralheating"
+                    to="/heating"
                     onClick={() => {
                       setIsDropdownOpen(false);
                       setIsOpen(false);
                     }}
                   >
-                    Central heating
+                    Heating
                   </NavLink>
                   <NavLink
                     to="/hotwatersystems"
@@ -136,10 +136,10 @@ const Navbar = () => {
                     Plumbing
                   </NavLink>
                   <NavLink
-                    to="/centralheating"
+                    to="/heating"
                     onClick={() => setIsDropdownOpen(false)}
                   >
-                    Central heating
+                    Heating
                   </NavLink>
                   <NavLink
                     to="/hotwatersystems"

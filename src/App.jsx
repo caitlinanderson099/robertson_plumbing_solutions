@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Plumbing from './pages/Plumbing';
 import Drainage from './pages/Drainage'
-import CentralHeating from './pages/CentralHeating'
+import Heating from './pages/Heating'
 import Contact from './pages/Contact'
 import TestimonialGallery from './pages/TestimonialGallery';
 import HotWaterSystems from './pages/HotWaterSystems'
@@ -27,7 +27,7 @@ function App() {
         {/* Drop Down Pages */}
         <Route path="/plumbing" element={<Plumbing/>}/>
         <Route path="/drainage" element={<Drainage/>}/>
-        <Route path="/centralheating" element={<CentralHeating/>}/>
+        <Route path="/heating" element={<Heating/>}/>
         <Route path="/hotwatersystems" element={<HotWaterSystems/>}/>
         <Route path="/rural" element={<Rural/>}/>
         {/* Normal Pages */}

@@ -70,25 +70,26 @@ const Plumbing = () => {
   // top section
   const TopSection = () => {
     return (
-      <div className="top-section">
+      <div className="plumbing-top">
 
-        <div className="left">
-          <img src="/project-images/commercial-plumbing1.jpg" alt="" />
-        </div>
-
-        <div className="right">
+        <div className="plumbing-left">
           <div className="header">
             <h1>Plumbing services</h1>
             <hr />
           </div>
           <div className="plumbing-services">
-            <p className="intro">Reliable, affordable plumbing and heating solutions for homes and businesses across the Hutt Valley and Wellington region.</p>
+            <p className="intro">Reliable Plumbing for Every Home and Business</p>
 
-          <p>At Robertson Plumbing Solutions, we’re proud to provide reliable, high-quality plumbing services throughout the Hutt Valley and Wellington region. With over 20 years of residential and commercial experience, our skilled team listens carefully to your needs and delivers tailored solutions that last — from quick repairs to full plumbing installations.</p>
+          <p>At Robertson Plumbing Solutions, we deliver reliable, high-quality plumbing services across the Hutt Valley and Wellington region. With over 20 years of experience in both residential and commercial projects, our skilled team provides tailored solutions designed to meet your home or business needs — from quick repairs to full plumbing installations.</p>
 
-          <p>We offer a complete range of plumbing services, including tap and pipe repairs, bathroom renovations, water main repairs, and emergency callouts. Our team also provides specialist solutions like rainwater harvesting, earthquake-ready water tanks, and regular commercial maintenance. No matter the size of the job, you can count on us for clear communication, quality workmanship, and results built to last.</p>
+          <p>We offer a complete range of services, including tap and pipe repairs, bathroom renovations, water main repairs, and emergency callouts. Our team also provides specialist plumbing solutions such as rainwater harvesting systems, earthquake-ready water tanks, and regular commercial maintenance, ensuring your property’s plumbing runs efficiently and reliably.</p>
+
+          <p>No matter the size of the job, you can count on Robertson Plumbing Solutions for clear communication, quality workmanship, and lasting results — keeping your home or business flowing smoothly year-round.</p>
           </div>
+        </div>
 
+        <div className="plumbing-right">
+          <img src="/project-images/commercial-plumbing1.jpg" alt="" />
         </div>
       </div>
     )
