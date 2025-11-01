@@ -17,27 +17,28 @@ const TestimonialGallery = () => {
 
 const TestimonialSection = () => {
   const testimonials = [
-    {
-      name: "John Doe, Newtown Wellington",
-      text: "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit...”",
-    },
-    {
-      name: "Jane Smith, Porirua",
-      text: "“Donec quam felis, ultricies nec, pellentesque eu, pretium quis...”",
-    },
-    {
-      name: "Sam Lee, Lower Hutt",
-      text: "“Cum sociis natoque penatibus et magnis dis parturient montes...”",
-    },
-    {
-      name: "Olivia Brown, Petone",
-      text: "“Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet.”",
-    },
-    {
-      name: "Michael Green, Upper Hutt",
-      text: "“Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.”",
-    },
-  ];
+  {
+    name: "John Taylor, Lower Hutt",
+    text: "“Robertson Plumbing did an outstanding job installing our new hot water system. They were punctual, professional, and left everything tidy. Highly recommend their services!”",
+  },
+  {
+    name: "Emma Wilson, Upper Hutt",
+    text: "“Fantastic service from start to finish. The team quickly identified the drainage issue on our property and had it fixed the same day. Couldn’t be happier with the result.”",
+  },
+  {
+    name: "Liam Carter, Petone",
+    text: "“We had a full bathroom renovation completed by Robertson Plumbing and the quality was excellent. Great communication and attention to detail throughout.”",
+  },
+  {
+    name: "Sophie Martin, Wainuiomata",
+    text: "“Our water pressure was terrible until these guys came around. They installed a new pump system and it’s made a huge difference — professional, friendly, and efficient.”",
+  },
+  {
+    name: "Ben Roberts, Wellington Central",
+    text: "“Really impressed with the level of service. They sorted out our leaking pipes quickly and explained everything clearly. Reliable and great to deal with.”",
+  },
+];
+
 
   return (
     <div className="testimonial-marquee-section">
@@ -72,9 +73,17 @@ const GallerySection = () => {
     "/project-images/infinity2.jpg",
     "/project-images/underfloor-heating3.JPG",
     "/project-images/spouting3.JPG",
-    "/project-images/central-heating7.JPG",
-      "/project-images/infinity5.jpg",
-    "/project-images/underfloor-heating2.JPG"
+    "/project-images/central-heating6.JPG",
+    "/project-images/infinity5.jpg",
+    "/project-images/underfloor-heating2.JPG",
+    "/project-images/rural2.jpg",
+    "/project-images/hot-water4.JPG",
+    "/project-images/heatpump1.jpg",
+    "/project-images/drainage1.JPG",
+    "/project-images/drainage6.jpg",
+    "/project-images/bathroom-reno.webp",
+    "/project-images/bathroom1.jpg",
+    "/project-images/bathroom2.jpg"
     ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);

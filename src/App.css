@@ -241,7 +241,7 @@ footer {
 }
 
 .about-section .right .header hr {
-  width: 60%;
+  width: 27%;
   height: 3px;
   background-color: var(--yellow-color);
   border: none;
@@ -490,16 +490,314 @@ footer {
   border-bottom-left-radius: 10px;
 }
 
-/* ----------- Drainlaying Page CSS ------------- */
+/* ----------- Hot Water Systems Page CSS ------------- */
+/* TOP SECTION */
+.hot-water-top {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
 
-.drainlaying-page {
+/* TOP - LEFT SIDE */
+.hot-water-top .hot-water-left {
+   width: 100%;
   padding: 30px;
 }
 
-.drainlaying-page .section-header {
-  text-align: left;
+.hot-water-top .hot-water-left .hot-water-services {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
 }
 
+.hot-water-top .hot-water-left .hot-water-services .intro {
+  font-weight: 600;
+  color: #1c3c57;
+  margin-bottom: 1rem;
+}
+
+.hot-water-top .hot-water-left .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hot-water-top .hot-water-left .header hr {
+  width: 60%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+/* TOP - RIGHT SIDE */
+.hot-water-top .hot-water-right img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom-left-radius: 10px;
+}
+
+/* BOTTOM SECTION */
+.bottom-section {
+  padding: 30px;
+  margin: 20px 0px;
+}
+
+.bottom-section .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.bottom-section .header hr {
+  width: 40%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.bottom-section .services-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 20px;
+}
+
+.bottom-section .services-cont .service-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.bottom-section .services-cont .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  background-color: var(--yellow-color);
+}
+
+.bottom-section .services-cont .service-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1c3c57; /* matches plumbing / brand tones */
+}
+
+.bottom-section .services-cont .service-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ----------- Rural Page CSS ------------- */
+/* TOP SECTION */
+.rural-top {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+/* TOP - LEFT SIDE */
+.rural-top .rural-left {
+   width: 100%;
+  padding: 30px;
+}
+
+.rural-top .rural-left .rural-services {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.rural-top .rural-left .rural-services .intro {
+  font-weight: 600;
+  color: #1c3c57;
+  margin-bottom: 1rem;
+}
+
+.rural-top .rural-left .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.rural-top .rural-left .header hr {
+  width: 60%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+/* TOP - RIGHT SIDE */
+.rural-top .rural-right img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom-left-radius: 10px;
+}
+
+/* BOTTOM SECTION */
+.bottom-section {
+  padding: 30px;
+  margin: 20px 0px;
+}
+
+.bottom-section .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.bottom-section .header hr {
+  width: 40%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.bottom-section .services-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 20px;
+}
+
+.bottom-section .services-cont .service-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.bottom-section .services-cont .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  background-color: var(--yellow-color);
+}
+
+.bottom-section .services-cont .service-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1c3c57; /* matches plumbing / brand tones */
+}
+
+.bottom-section .services-cont .service-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ----------- Drainage Page CSS ------------- */
+/* TOP SECTION */
+.drainage-top {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+/* TOP - LEFT SIDE */
+.drainage-top .drainage-left {
+   width: 100%;
+  padding: 30px;
+}
+
+.drainage-top .drainage-left .drainage-services {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.drainage-top .drainage-left .drainage-services .intro {
+  font-weight: 600;
+  color: #1c3c57;
+  margin-bottom: 1rem;
+}
+
+.drainage-top .drainage-left .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.drainage-top .drainage-left .header hr {
+  width: 40%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+/* TOP - RIGHT SIDE */
+.drainage-top .drainage-right img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom-left-radius: 10px;
+}
+
+/* BOTTOM SECTION */
+.bottom-section {
+  padding: 30px;
+  margin: 20px 0px;
+}
+
+.bottom-section .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.bottom-section .header hr {
+  width: 33%;
+  height: 3px;
+  background-color: var(--yellow-color);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.bottom-section .services-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 20px;
+}
+
+.bottom-section .services-cont .service-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.bottom-section .services-cont .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  background-color: var(--yellow-color);
+}
+
+.bottom-section .services-cont .service-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1c3c57; /* matches plumbing / brand tones */
+}
+
+.bottom-section .services-cont .service-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
 
 /* ----------- Contact Us Page CSS ------------- */
 .contact-content {
@@ -659,7 +957,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 1rem;
-  padding: 4rem 5%;
+  padding: 4rem 2%;
 }
 
 /* Left text area */
@@ -677,7 +975,7 @@ footer {
 }
 
 .gallery-left .header hr {
-  width: 60%;
+  width: 40%;
   height: 3px;
   background-color: var(--yellow-color);
   border: none;
@@ -787,7 +1085,7 @@ footer {
 
 /* Testimonial Section */
 .testimonial-marquee-section {
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   overflow: hidden;
 }
 
@@ -806,7 +1104,7 @@ footer {
 }
 
 .testimonial-marquee-section .header hr {
-  width: 60%;
+  width: 27%;
   height: 3px;
   background-color: var(--yellow-color);
   border: none;
@@ -1033,6 +1331,114 @@ footer {
     width: 90%;
   }
 
+  /* --------- HOT WATER SYSTEMS PAGE CSS ------------- */
+   .hot-water-top {
+    grid-template-columns: 1fr;
+  }
+
+  .hot-water-top .hot-water-left {
+    padding: 30px;
+    order: 2;
+  }
+
+  .hot-water-top .hot-water-right {
+    order: 1;
+  }
+
+  .hot-water-top .hot-water-right img {
+    height: 300px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 10px;
+  }
+
+  .hot-water-top .hot-water-left .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .hot-water-top .hot-water-left .header hr {
+    width: 50%;
+  }
+
+  .hot-water-top .hot-water-left .hot-water-services {
+    gap: 1rem;
+  }
+
+  .hot-water-top .hot-water-left .hot-water-services .intro {
+    font-size: 0.95rem;
+  }
+
+  /* --------- RURAL PAGE CSS ------------- */
+   .rural-top {
+    grid-template-columns: 1fr;
+  }
+
+  .rural-top .rural-left {
+    padding: 30px;
+    order: 2;
+  }
+
+  .rural-top .rural-right {
+    order: 1;
+  }
+
+  .rural-top .rural-right img {
+    height: 300px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 10px;
+  }
+
+  .rural-top .rural-left .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .rural-top .rural-left .header hr {
+    width: 50%;
+  }
+
+  .rural-top .rural-left .rural-services {
+    gap: 1rem;
+  }
+
+  .rural-top .rural-left .rural-services .intro {
+    font-size: 0.95rem;
+  }
+
+  /* --------- DRAINAGE PAGE CSS ------------- */
+   .drainage-top {
+    grid-template-columns: 1fr;
+  }
+
+  .drainage-top .drainage-left {
+    padding: 30px;
+    order: 2;
+  }
+
+  .drainage-top .drainage-right {
+    order: 1;
+  }
+
+  .drainage-top .drainage-right img {
+    height: 300px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 10px;
+  }
+
+  .drainage-top .drainage-left .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .drainage-top .drainage-left .header hr {
+    width: 57%;
+  }
+
+  .drainage-top .drainage-left .drainage-services {
+    gap: 1rem;
+  }
+
+  .drainage-top .drainage-left .drainage-services .intro {
+    font-size: 0.95rem;
+  }
+
   /* ------------ CONTACT PAGE CSS ---------------- */
     .contact-content {
     flex-direction: column;
@@ -1126,8 +1532,8 @@ footer {
   }
 
   .about-section .right .header hr {
-    width: 80%;
-    height: 2px;
+    width: 40%;
+    height: 3px;
     margin-bottom: 1rem;
   }
 
@@ -1195,6 +1601,10 @@ footer {
 
   .marquee-track {
     animation-duration: 50s;
+  }
+
+  .testimonial-marquee-section .header hr {
+    width: 100%;
   }
 
   /* --------- HOME PAGE LANDING CSS --------- */
