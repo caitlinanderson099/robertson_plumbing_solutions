@@ -89,11 +89,11 @@ const Contact = () => {
             <label>What service are you looking for? <span>*</span><hr /></label>
             <select name="service" required>
               <option value="">-- Select a Service --</option>
-              <option value="job_quoting">Job Quoting</option>
+              <option value="job_quoting">Job quoting</option>
               <option value="plumbing">Plumbing</option>
               <option value="emergency">Emergency / After Hours Plumbing</option>
               <option value="drainlaying">Drainlaying</option>
-              <option value="central_heating">Central Heating</option>
+              <option value="central_heating">Central heating</option>
               <option value="other">Other</option>
             </select>
           </div>
