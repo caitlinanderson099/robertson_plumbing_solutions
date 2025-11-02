@@ -5,32 +5,53 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import SEO from '../components/SEO';
 import CertificationSection from '../components/CertificationSection';
 
+// ENV Imports
+const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID
+const MAIN_TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_MAIN_TEMPLATE_ID
+const REPLY_TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_REPLY_TEMPLATE_ID
+const USER_ID = import.meta.env.VITE_EMAIL_JS_USER_ID
+
 
 const Contact = () => {
   const form = useRef()
 
   const sendEmail = (e) => {
-    e.preventDefault()
+  e.preventDefault();
 
-    emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID',     // replace with EmailJS service ID
-        'YOUR_TEMPLATE_ID',    // replace with EmailJS template ID
+  // Send email to YOU (the business)
+  emailjs.sendForm(
+    SERVICE_ID,      // your service ID
+    MAIN_TEMPLATE_ID,     // your main notification template ID
+    form.current,
+    USER_ID
+  ).then(
+    (result) => {
+      console.log('Message sent to business:', result.text);
+
+      // Send auto-reply to the customer
+      emailjs.sendForm(
+        SERVICE_ID,  // same service ID
+        REPLY_TEMPLATE_ID, // your new auto-reply template ID
         form.current,
-        'YOUR_PUBLIC_KEY'      // replace with your EmailJS public key
-      )
-      .then(
-        (result) => {
-          console.log('Message sent:', result.text)
-          alert('Message sent successfully!')
-          form.current.reset()
+        USER_ID
+      ).then(
+        () => {
+          alert('Message sent successfully!');
+          form.current.reset();
         },
         (error) => {
-          console.error('Error:', error.text)
-          alert('Something went wrong, please try again later.')
+          console.error('Auto-reply failed:', error.text);
         }
-      )
-  }
+      );
+
+    },
+    (error) => {
+      console.error('Error sending to business:', error.text);
+      alert('Something went wrong. Please try again later.');
+    }
+  );
+};
+
 
   const ContactForm = () => {
     return (
