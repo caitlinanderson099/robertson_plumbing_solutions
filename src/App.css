@@ -842,13 +842,16 @@ footer {
   color: var(--charcoal-black);
 }
 
+.socials a {
+  color: inherit;     
+}
+
 .socials svg {
   cursor: pointer;
   transition: transform 0.2s ease, color 0.3s ease;
   background-color: var(--yellow-color);
   padding: 4px;
   border-radius: 50%;
-
 }
 
 .socials svg:hover {

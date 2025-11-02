@@ -138,15 +138,25 @@ const Contact = () => {
           <p>Get in touch with us for a free, non-obligation quote today.</p>
 
            <div className="socials">
-            <a href="https://www.instagram.com/robertson_plumbing_nz/">
-              <FaInstagram/>
-            </a>
-            <a href="mailto:ben@robertsonplumbing.co.nz">
-              <FaEnvelope/>
-            </a>
-            <a href="tel:0273412624"></a>
-            <FaPhoneVolume/>
-          </div>
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/robertson_plumbing_nz/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaInstagram />
+  </a>
+
+  {/* Email */}
+  <a href="mailto:ben@robertsonplumbing.co.nz">
+    <FaEnvelope />
+  </a>
+
+  {/* Phone */}
+  <a href="tel:0273651682">
+    <FaPhoneVolume />
+  </a>
+</div>
 
         </div>
 
