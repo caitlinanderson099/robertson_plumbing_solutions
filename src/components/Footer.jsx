@@ -3,10 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer>
-      <div className="number-banner">
-        <h3>Call us on 027-365-1682</h3>
-      </div>
-      <div className="footer-details">
+            <div className="footer-details">
         <div className="logo">
           <img src="/logo-images/logo.svg" alt="" />
         </div>

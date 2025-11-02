@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from '../components/SEO';
+import Footer from '../components/Footer';
 
 
 const Drainage = () => {
@@ -102,7 +103,7 @@ const Drainage = () => {
           <TopSection/>
           <BottomSection/>
         </div>
-        
+        <Footer/>
     </>
   )
 }

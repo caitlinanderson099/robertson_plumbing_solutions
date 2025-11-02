@@ -11,6 +11,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import CertificationSection from '../components/CertificationSection';
+import Footer from '../components/Footer';
+
 
 
 const About = () => {
@@ -169,6 +171,7 @@ const About = () => {
     <ServiceSection/>
     <CertificationSection/>
     </div>
+    <Footer/>
     </>
   )
 }

@@ -14,8 +14,6 @@ import TestimonialGallery from './pages/TestimonialGallery';
 import HotWaterSystems from './pages/HotWaterSystems'
 import Rural from './pages/Rural';
 
-// import Footer from './components/Footer';
-
 
 function App() {
   return (
@@ -34,7 +32,6 @@ function App() {
         <Route path="/contactus" element={<Contact/>}/>
         <Route path="/testimonialsandgallery" element={<TestimonialGallery/>}/>
       </Routes>
-      {/* <Footer/> */}
     </Router>
   );
 }

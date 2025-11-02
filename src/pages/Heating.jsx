@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from '../components/SEO';
+import Footer from '../components/Footer';
 
 
 const Heating = () => {
@@ -99,7 +100,8 @@ const Heating = () => {
         <div className="heating-page">
           <HeatingTopSection/>
           <HeatingBottomSection/>
-        </div>    
+        </div>   
+        <Footer/> 
     </>
   )
 }

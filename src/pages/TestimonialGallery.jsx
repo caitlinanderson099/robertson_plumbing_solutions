@@ -11,6 +11,8 @@ import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import CertificationSection from '../components/CertificationSection';
+import Footer from '../components/Footer';
+
 
 
 const TestimonialGallery = () => {
@@ -173,10 +175,10 @@ const GallerySection = () => {
               <GallerySection/>
 
         <TestimonialSection/>
-
-        <CertificationSection/>
         
     </div>
+    <CertificationSection/>
+    <Footer/>
     </>
     );
 }

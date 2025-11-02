@@ -4,6 +4,8 @@ import { FaEnvelope, FaFacebook, FaInstagram} from 'react-icons/fa'
 import { FaPhoneVolume } from "react-icons/fa6";
 import SEO from '../components/SEO';
 import CertificationSection from '../components/CertificationSection';
+import Footer from '../components/Footer';
+
 
 // ENV Imports
 const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID
@@ -163,8 +165,9 @@ const Contact = () => {
         <div className="right-side">
           <ContactForm/>
         </div>
-        {/* <CertificationSection/> */}
       </div>
+      <CertificationSection/>
+      <Footer/>
     </>
   )
 }

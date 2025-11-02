@@ -1,6 +1,7 @@
 import React from 'react'
 import SEO from '../components/SEO';
 
+import Footer from '../components/Footer';
 
 const Rural = () => {
 
@@ -92,6 +93,7 @@ const Rural = () => {
           <TopSection/>
           <BottomSection/>
         </div>
+        <Footer/>
         
     </>
   )
