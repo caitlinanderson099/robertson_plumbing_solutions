@@ -1,11 +1,14 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import { FaEnvelope, FaFacebook, FaInstagram} from 'react-icons/fa'
+import { FaEnvelope, FaFacebook, FaInstagram } from 'react-icons/fa'
 import { FaPhoneVolume } from "react-icons/fa6";
 import SEO from '../components/SEO';
 import CertificationSection from '../components/CertificationSection';
 import Footer from '../components/Footer';
 
+// Toastify imports
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // ENV Imports
 const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID
@@ -13,51 +16,103 @@ const MAIN_TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_MAIN_TEMPLATE_ID
 const REPLY_TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_REPLY_TEMPLATE_ID
 const USER_ID = import.meta.env.VITE_EMAIL_JS_USER_ID
 
-
 const Contact = () => {
   const form = useRef()
 
-  const sendEmail = (e) => {
+const sendEmail = (e) => {
   e.preventDefault();
 
-  // Send email to YOU (the business)
   emailjs.sendForm(
-    SERVICE_ID,      // your service ID
-    MAIN_TEMPLATE_ID,     // your main notification template ID
+    SERVICE_ID,
+    MAIN_TEMPLATE_ID,
     form.current,
     USER_ID
   ).then(
     (result) => {
       console.log('Message sent to business:', result.text);
 
-      // Send auto-reply to the customer
       emailjs.sendForm(
-        SERVICE_ID,  // same service ID
-        REPLY_TEMPLATE_ID, // your new auto-reply template ID
+        SERVICE_ID,
+        REPLY_TEMPLATE_ID,
         form.current,
         USER_ID
       ).then(
         () => {
-          alert('Message sent successfully!');
+          toast("🛠️ Thank you! We've received your enquiry and will be in touch soon.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,  // Removed progress bar
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            style: {
+              background: '#F9F9F9',           // Clean background
+              color: '#111827',                // Dark text
+              borderLeft: '6px solid #FDDF48', // Yellow accent
+              fontWeight: 600,
+              borderRadius: '6px',
+              padding: '16px 24px',
+              fontFamily: 'League Spartan, sans-serif',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+              letterSpacing: '0.5px',
+            },
+            icon: false, // Using emoji instead of default icon
+          });
           form.current.reset();
         },
         (error) => {
           console.error('Auto-reply failed:', error.text);
+          toast("🛠️ Thanks! We've received your enquiry.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            style: {
+              background: '#F9F9F9',
+              color: '#111827',
+              borderLeft: '6px solid #FDDF48',
+              fontWeight: 600,
+              borderRadius: '6px',
+              padding: '16px 24px',
+              fontFamily: 'Inter, sans-serif',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+              letterSpacing: '0.5px',
+            },
+            icon: false,
+          });
         }
       );
 
     },
     (error) => {
       console.error('Error sending to business:', error.text);
-      alert('Something went wrong. Please try again later.');
+      toast.error("⚠️ Something went wrong. Please try again.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        style: {
+          background: '#F3F4F6',           // Gray for errors
+          color: '#111827',
+          borderLeft: '6px solid #FDDF48',
+          fontWeight: 600,
+          borderRadius: '6px',
+          padding: '16px 24px',
+          fontFamily: 'Inter, sans-serif',
+          boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+          letterSpacing: '0.5px',
+        },
+      });
     }
   );
 };
 
 
+
+
+
+
   const ContactForm = () => {
     return (
-        <div className="contact-form-container">
+      <div className="contact-form-container">
         <form ref={form} onSubmit={sendEmail} className="contact-form">
 
           <div className="label-group">
@@ -75,18 +130,16 @@ const Contact = () => {
             <input type="email" name="user_email" required />
           </div>
 
-
           <div className="label-group">
             <label>Contact Number <span>*</span><hr /></label>
             <input type="number" name="user_number" required />
           </div>
 
-
           <div className="label-group">
             <label>Address (optional)<hr /></label>
             <input type="text" name="user_address" />
           </div>
-                   
+
           <div className="label-group">
             <label>What service are you looking for? <span>*</span><hr /></label>
             <select name="service" required>
@@ -100,12 +153,10 @@ const Contact = () => {
             </select>
           </div>
 
-          
           <div className="label-group">
             <label>How did you hear about us? (optional)<hr /></label>
             <input type="text" name="referral_source" />
           </div>
-
 
           <div className="label-group">
             <label>Message <span>*</span> <hr /></label>
@@ -120,7 +171,7 @@ const Contact = () => {
 
   return (
     <>
-    <SEO
+      <SEO
         title="Contact Us | Robertson Plumbing Solutions"
         description="Professional plumbing services in NZ"
         keywords="plumbing, NZ, Robertson"
@@ -139,27 +190,17 @@ const Contact = () => {
 
           <p>Get in touch with us for a free, non-obligation quote today.</p>
 
-           <div className="socials">
-  {/* Instagram */}
-  <a
-    href="https://www.instagram.com/robertson_plumbing_nz/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaInstagram />
-  </a>
-
-  {/* Email */}
-  <a href="mailto:ben@robertsonplumbing.co.nz">
-    <FaEnvelope />
-  </a>
-
-  {/* Phone */}
-  <a href="tel:0273651682">
-    <FaPhoneVolume />
-  </a>
-</div>
-
+          <div className="socials">
+            <a href="https://www.instagram.com/robertson_plumbing_nz/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="mailto:ben@robertsonplumbing.co.nz">
+              <FaEnvelope />
+            </a>
+            <a href="tel:0273651682">
+              <FaPhoneVolume />
+            </a>
+          </div>
         </div>
 
         <div className="right-side">
@@ -168,6 +209,9 @@ const Contact = () => {
       </div>
       <CertificationSection/>
       <Footer/>
+
+      {/* Toast container */}
+      <ToastContainer />
     </>
   )
 }
