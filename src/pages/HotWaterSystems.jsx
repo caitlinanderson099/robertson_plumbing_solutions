@@ -1,6 +1,7 @@
 import React from 'react'
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
+import CertificationSection from '../components/CertificationSection'
 
 
 const HotWaterSystems = () => {
@@ -88,6 +89,7 @@ const HotWaterSystems = () => {
           <TopSection/>
           <BottomSection/>
         </div>
+        <CertificationSection/>
         <Footer/>
         
     </>

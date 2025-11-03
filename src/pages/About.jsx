@@ -34,7 +34,7 @@ const About = () => {
 
         <div className="right">
           <div className="header">
-            <h1>About Us</h1>
+            <h1>About us</h1>
             <hr />
           </div>
           <p>Robertson Plumbing Solutions is a locally owned company providing high quality and affordable plumbing, drain laying and heating services to the Hutt Valley and wider Wellington region. </p>
@@ -52,74 +52,180 @@ const About = () => {
   const ServiceSection = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
-   const services = [
-    {
-  "title": "Plumbing",
-  "description": "We offer a full range of plumbing solutions — from everyday household needs to large-scale commercial maintenance. Our services include tap and pipework repairs, bathroom renovations, water main fixes, and more. \n\nKey services:\n• Tap repairs and replacements\n• Pipework repairs and replacements\n• Leaking water main repairs\n• Bathroom renovations\n• Waste disposal units / Insinkerators\n• Spouting, gutters, and downpipes\n• Water pressure troubleshooting\n• Rainwater harvesting systems\n• Earthquake-ready emergency water tanks\n• Pre-purchase plumbing inspections\n• Commercial plumbing and maintenance\n• Emergency and after-hours services"
-},
+  const services = [
   {
-  "title": "Central Heating",
-  "description": "Air to Water Heat Pumps:\n• Energy-efficient heating for homes and businesses\n• Extracts heat from air to supply hot water and warmth\n• Quiet, reliable, and suitable for various property sizes\n\nRadiator Heating Solutions:\n• Gentle, consistent warmth using hot water\n• Energy-efficient and low-maintenance\n• Suitable for renovations and new builds\n\nUnderfloor Heating:\n• Even heat distribution beneath floors\n• Works with many flooring types\n• Low maintenance and quiet operation\n\nContact our team for expert advice and a free quote."
-},
+    title: "Plumbing",
+    description: [
+      {
+        text: "We offer a full range of plumbing solutions — from everyday household needs to large-scale commercial maintenance."
+      },
+      {
+        subtitle: "Key Services",
+        bullets: [
+          "Tap repairs and replacements",
+          "Pipework repairs and replacements",
+          "Leaking water main repairs",
+          "Bathroom renovations",
+          "Waste disposal units / Insinkerators",
+          "Spouting, gutters, and downpipes",
+          "Water pressure troubleshooting",
+          "Rainwater harvesting systems",
+          "Earthquake-ready emergency water tanks",
+          "Pre-purchase plumbing inspections",
+          "Commercial plumbing and maintenance",
+          "Emergency and after-hours services"
+        ]
+      }
+    ]
+  },
   {
-  "title": "Hot Water Systems",
-  "description": "Heat Pump Hot Water Cylinders:\n• Transfers heat from air to water for energy savings\n• Up to 70% energy savings\n• Backup electric element for consistent supply\n• Provides heating/cooling\n• Eligible for efficiency incentives\n\nElectric Hot Water Cylinders:\n• Reliable electric tanks for consistent hot water\n• Flexible sizing\n• Energy-efficient\n• Easy installation\n• Safety features included\n\nLPG & Natural Gas Continuous Flow (Infinity) Systems:\n• Heats water on demand for endless supply\n• Continuous hot water\n• Energy and cost savings\n• Compact installation\n• Safe, precise temperature control\n• Eco-friendly operation"
-},
+    title: "Central Heating",
+    description: [
+      {
+        subtitle: "Air to Water Heat Pumps",
+        bullets: [
+          "Energy-efficient heating for homes and businesses",
+          "Extracts heat from air to supply hot water and warmth",
+          "Quiet, reliable, and suitable for various property sizes"
+        ]
+      },
+      {
+        subtitle: "Radiator Heating Solutions",
+        bullets: [
+          "Gentle, consistent warmth using hot water",
+          "Energy-efficient and low-maintenance",
+          "Suitable for renovations and new builds"
+        ]
+      },
+      {
+        subtitle: "Underfloor Heating",
+        bullets: [
+          "Even heat distribution beneath floors",
+          "Works with many flooring types",
+          "Low maintenance and quiet operation"
+        ]
+      },
+      {
+        text: "Contact our team for expert advice and a free quote."
+      }
+    ]
+  },
+  {
+    title: "Hot Water Systems",
+    description: [
+      {
+        subtitle: "Heat Pump Hot Water Cylinders",
+        bullets: [
+          "Transfers heat from air to water for energy savings",
+          "Up to 70% energy savings",
+          "Backup electric element for consistent supply",
+          "Provides heating/cooling",
+          "Eligible for efficiency incentives"
+        ]
+      },
+      {
+        subtitle: "Electric Hot Water Cylinders",
+        bullets: [
+          "Reliable electric tanks for consistent hot water",
+          "Flexible sizing",
+          "Energy-efficient",
+          "Easy installation",
+          "Safety features included"
+        ]
+      },
+      {
+        subtitle: "LPG & Natural Gas Continuous Flow (Infinity) Systems",
+        bullets: [
+          "Heats water on demand for endless supply",
+          "Continuous hot water",
+          "Energy and cost savings",
+          "Compact installation",
+          "Safe, precise temperature control",
+          "Eco-friendly operation"
+        ]
+      }
+    ]
+  },
   {
     title: "Rural",
-    "description": [
-    "Rural Services",
-    "Water solutions for farms and lifestyle properties.",
-    
-    "Pumps",
-    "Ensure reliable supply and pressure.",
-    "Types:",
-    "• Multistage centrifugal: Household & garden irrigation",
-    "• Submersible: Pump from wells or stormwater",
-    "• Booster: Maintain pressure for taps & showers",
-    "• Circulating: Hot water & underfloor heating",
-    "Benefits:",
-    "• Reliable, consistent, energy-efficient, durable",
-    
-    "Rainwater Tanks",
-    "Capture and store rainwater for garden, toilets, laundry or drinking (treated).",
-    "Benefits:",
-    "• Water resilience",
-    "• Healthy water for plants",
-    "• Various sizes & easy installation",
-    
-    "Rainwater Filtration",
-    "Clean water for home or business.",
-    "How it works:",
-    "• Pre-filtration: Leaves & debris",
-    "• Sediment & carbon: Improve quality & taste",
-    "• UV: Neutralises bacteria",
-    "Benefits:",
-    "• Clean, safe water",
-    "• Customizable for property size"
-  ]
+    description: [
+      {
+        subtitle: "Rural Services",
+        text: "Water solutions for farms and lifestyle properties."
+      },
+      {
+        subtitle: "Pumps",
+        bullets: [
+          "Ensure reliable supply and pressure",
+          "Types:",
+          "• Multistage centrifugal: Household & garden irrigation",
+          "• Submersible: Pump from wells or stormwater",
+          "• Booster: Maintain pressure for taps & showers",
+          "• Circulating: Hot water & underfloor heating",
+          "Benefits: Reliable, consistent, energy-efficient, durable"
+        ]
+      },
+      {
+        subtitle: "Rainwater Tanks",
+        bullets: [
+          "Capture and store rainwater for garden, toilets, laundry or drinking (treated)",
+          "Benefits: Water resilience, healthy water for plants, various sizes & easy installation"
+        ]
+      },
+      {
+        subtitle: "Rainwater Filtration",
+        bullets: [
+          "Clean water for home or business",
+          "How it works:",
+          "• Pre-filtration: Leaves & debris",
+          "• Sediment & carbon: Improve quality & taste",
+          "• UV: Neutralises bacteria",
+          "Benefits: Clean, safe water, customizable for property size"
+        ]
+      }
+    ]
   },
   {
     title: "Drainage",
-    "description": [
-      "Our drainage solutions include:",
-    
-    "• Installment of new drainage systems",
-    "• Repair existing drainage systems",
-    "• Maintain and unblock drains",
-    "• Drainage inspections",
-    "• New or replacement soak pits",
-    "• Stormwater drainage",
-    "• Digger and site works"
-  ]
+    description: [
+      {
+        text: "Our drainage solutions include:",
+        bullets: [
+          "Installment of new drainage systems",
+          "Repair existing drainage systems",
+          "Maintain and unblock drains",
+          "Drainage inspections",
+          "New or replacement soak pits",
+          "Stormwater drainage",
+          "Digger and site works"
+        ]
+      }
+    ]
   }
 ];
 
-  const toggleAccordion = (index) => {
+const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-     return (
+  // Helper to render description content
+  const renderDescription = (desc) => {
+    return desc.map((item, idx) => (
+      <div key={idx} className="service-desc-item">
+        {item.subtitle && <h3 className="service-subtitle">{item.subtitle}</h3>}
+        {item.text && <p className="service-text">{item.text}</p>}
+        {item.bullets && (
+          <ul className="service-bullets">
+            {item.bullets.map((bullet, bIdx) => (
+              <li key={bIdx}>{bullet}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    ));
+  };
+
+      return (
     <div className="service-section">
       <div className="header">
         <h1>Our Services</h1>
@@ -128,32 +234,22 @@ const About = () => {
 
       <div className="accordion">
   {services.map((service, index) => (
-    <div key={index} className="accordion-item">
-      <a
-        href="#"
-        role="button"
-        className={`accordion-title ${activeIndex === index ? "active" : ""}`}
-        onClick={(e) => {
-          e.preventDefault(); // prevents jump to top
-          toggleAccordion(index);
-        }}
-      >
+    <div
+      key={index}
+      className={`accordion-item ${activeIndex === index ? "active" : ""}`}
+      onClick={() => toggleAccordion(index)}
+    >
+      <div className="accordion-title">
         {service.title}
         <span className="arrow">{activeIndex === index ? "−" : "+"}</span>
-      </a>
+      </div>
 
-      <div
-        className={`accordion-content ${
-          activeIndex === index ? "show" : ""
-        }`}
-      >
-        <p className="accordion-text">{service.description}</p>
-
+      <div className={`accordion-content ${activeIndex === index ? "show" : ""}`}>
+        {renderDescription(service.description)}
       </div>
     </div>
   ))}
 </div>
-
     </div>
   );
 };

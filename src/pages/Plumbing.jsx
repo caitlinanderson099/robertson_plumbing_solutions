@@ -1,6 +1,8 @@
 import React from 'react'
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
+import CertificationSection from '../components/CertificationSection'
+
 
 
 const Plumbing = () => {
@@ -128,6 +130,7 @@ const Plumbing = () => {
           <TopSection/>
           <BottomSection/>
         </div>
+        <CertificationSection/>
         <Footer/>
         
     </>

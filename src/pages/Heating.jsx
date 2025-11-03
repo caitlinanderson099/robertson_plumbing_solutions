@@ -1,6 +1,7 @@
 import React from 'react'
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
+import CertificationSection from '../components/CertificationSection'
 
 
 const Heating = () => {
@@ -91,7 +92,7 @@ const Heating = () => {
   return (
     <>
       <SEO
-        title="Central Heating | Robertson Plumbing Solutions"
+        title="Heating | Robertson Plumbing Solutions"
         description="Professional plumbing services in NZ"
         keywords="plumbing, NZ, Robertson"
         author="Robertson Plumbing Solutions"
@@ -101,6 +102,7 @@ const Heating = () => {
           <HeatingTopSection/>
           <HeatingBottomSection/>
         </div>   
+        <CertificationSection/>
         <Footer/> 
     </>
   )

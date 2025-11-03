@@ -2,6 +2,8 @@ import React from 'react'
 import SEO from '../components/SEO';
 
 import Footer from '../components/Footer';
+import CertificationSection from '../components/CertificationSection'
+
 
 const Rural = () => {
 
@@ -93,6 +95,7 @@ const Rural = () => {
           <TopSection/>
           <BottomSection/>
         </div>
+        <CertificationSection/>
         <Footer/>
         
     </>
