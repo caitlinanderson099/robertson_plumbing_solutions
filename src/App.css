@@ -46,7 +46,7 @@ button:hover {
 
 /* ----------------- Footer CSS --------------- */
 footer {
-  background: var(--light-grey);
+  background: #f9f9f9;
   padding: 2rem 1rem;
   border-top: 1px solid var(--charcoal-black);
 }
@@ -197,7 +197,7 @@ footer {
   align-items: center;     /* centers them vertically */
   gap: 4rem;               /* spacing between logo, links, and CTA */
   padding: 10px;
-  background: var(--light-grey);
+  background: #f9f9f9;
   border-bottom: 1px solid var(--charcoal-black);
   z-index: 1000;
   flex-direction: row; /* desktop: horizontal */
