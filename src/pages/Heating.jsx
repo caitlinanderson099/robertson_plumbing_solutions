@@ -65,7 +65,7 @@ const Heating = () => {
         </div>
 
         <div className="heating-right">
-          <img src="/project-images/central-heating5.JPG" alt="" />
+          <img src="/project-images/central-heating5.webp" alt="" />
         </div>
       </div>
     )

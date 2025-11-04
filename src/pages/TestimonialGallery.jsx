@@ -70,22 +70,22 @@ const TestimonialSection = () => {
 
 const GallerySection = () => {
   const images = [
-    "/project-images/central-heating1.JPG",
-    "/project-images/spouting1.JPG",
-    "/project-images/infinity2.jpg",
-    "/project-images/underfloor-heating3.JPG",
-    "/project-images/spouting3.JPG",
-    "/project-images/central-heating6.JPG",
-    "/project-images/infinity5.jpg",
-    "/project-images/underfloor-heating2.JPG",
-    "/project-images/rural2.jpg",
-    "/project-images/hot-water4.JPG",
-    "/project-images/heatpump1.jpg",
-    "/project-images/drainage1.JPG",
-    "/project-images/drainage6.jpg",
+    "/project-images/central-heating1.webp",
+    "/project-images/spouting1.webp",
+    "/project-images/infinity2.webp",
+    "/project-images/underfloor-heating3.webp",
+    "/project-images/spouting3.webp",
+    "/project-images/central-heating6.webp",
+    "/project-images/infinity5.webp",
+    "/project-images/underfloor-heating2.webp",
+    "/project-images/rural2.webp",
+    "/project-images/hot-water4.webp",
+    "/project-images/heatpump1.webp",
+    "/project-images/drainage1.webp",
+    "/project-images/drainage6.webp",
     "/project-images/bathroom-reno.webp",
-    "/project-images/bathroom1.jpg",
-    "/project-images/bathroom2.jpg"
+    "/project-images/bathroom1.webp",
+    "/project-images/bathroom2.webp"
     ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);

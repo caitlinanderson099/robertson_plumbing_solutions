@@ -51,7 +51,7 @@ const HotWaterSystems = () => {
         </div>
 
         <div className="hot-water-right">
-          <img src="/project-images/hot-water4.JPG" alt="" />
+          <img src="/project-images/hot-water4.webp" alt="" />
         </div>
       </div>
     )

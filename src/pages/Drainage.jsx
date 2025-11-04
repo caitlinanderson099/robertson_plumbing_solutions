@@ -66,7 +66,7 @@ const Drainage = () => {
         </div>
 
         <div className="drainage-right">
-          <img src="/project-images/drainage1.JPG" alt="" />
+          <img src="/project-images/drainage1.webp" alt="" />
         </div>
       </div>
     )

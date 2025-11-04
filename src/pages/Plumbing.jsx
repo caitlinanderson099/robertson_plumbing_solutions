@@ -92,7 +92,7 @@ const Plumbing = () => {
         </div>
 
         <div className="plumbing-right">
-          <img src="/project-images/commercial-plumbing1.jpg" alt="" />
+          <img src="/project-images/commercial-plumbing1.webp" alt="" />
         </div>
       </div>
     )

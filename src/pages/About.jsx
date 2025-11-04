@@ -29,7 +29,7 @@ const About = () => {
       <div className="about-section">
 
         <div className="left">
-          <img src="/project-images/company-vehicle.jpg" alt="" />
+          <img src="/project-images/company-vehicle.webp" alt="" />
         </div>
 
         <div className="right">

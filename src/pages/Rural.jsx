@@ -57,7 +57,7 @@ const Rural = () => {
         </div>
 
         <div className="rural-right">
-          <img src="/project-images/rural2.jpg" alt="" />
+          <img src="/project-images/rural2.webp" alt="" />
         </div>
       </div>
     )
