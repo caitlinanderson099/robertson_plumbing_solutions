@@ -12,7 +12,7 @@ const CertificationSection = () => {
             <div className="cert-icon">
               <AiFillSafetyCertificate />
             </div>
-            <h4>Certifying Drainlayer</h4>
+            <h4>Certified Drainlayer</h4>
             <p>
               Licensed and experienced in installing and maintaining effective
               drainage systems.
@@ -23,7 +23,7 @@ const CertificationSection = () => {
             <div className="cert-icon">
               <AiFillSafetyCertificate />
             </div>
-            <h4>Certifying Plumber</h4>
+            <h4>Certified Plumber</h4>
             <p>
               Fully qualified to carry out residential and commercial plumbing
               installations and repairs.

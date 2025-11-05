@@ -279,27 +279,7 @@ footer {
   opacity: 100%;
 }
 
-/* for home page image overlay */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for darkness */
-  z-index: 1;
-}
-.header-title {
-  z-index: 2;
-  font-size: 3rem;
-  margin: 0;
-  text-align: center;
-} 
 
-.header-subheading {
-  font-size: 1.2rem;
-  text-align: center;
-}
 
 /* ----------------- Landing Page Header CSS --------------- */
 .hero-section {
