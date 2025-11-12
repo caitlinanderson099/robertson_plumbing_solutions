@@ -144,12 +144,12 @@ const sendEmail = (e) => {
             <label>What service are you looking for? <span>*</span><hr /></label>
             <select name="service" required>
               <option value="">-- Select a Service --</option>
-              <option value="job_quoting">Job quoting</option>
-              <option value="plumbing">Plumbing</option>
-              <option value="emergency">Emergency / After Hours Plumbing</option>
-              <option value="drainlaying">Drainlaying</option>
+              <option value="Job quoting">Job quoting</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Emergency/After hours">Emergency / After Hours Plumbing</option>
+              <option value="Drainlaying">Drainlaying</option>
               <option value="Central heating">Central heating</option>
-              <option value="other">Other</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
