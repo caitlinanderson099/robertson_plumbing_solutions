@@ -148,7 +148,7 @@ const sendEmail = (e) => {
               <option value="plumbing">Plumbing</option>
               <option value="emergency">Emergency / After Hours Plumbing</option>
               <option value="drainlaying">Drainlaying</option>
-              <option value="central_heating">Central heating</option>
+              <option value="Central heating">Central heating</option>
               <option value="other">Other</option>
             </select>
           </div>
