@@ -42,7 +42,7 @@ const Rural = () => {
 
         <div className="rural-left">
           <div className="header">
-            <h1>Rural services</h1>
+            <h1>Rural Services</h1>
             <hr />
           </div>
           <div className="rural-services">

@@ -110,7 +110,7 @@ const GallerySection = () => {
       {/* Left column */}
       <div className="gallery-left">
         <div className="header">
-            <h1>Our gallery</h1>
+            <h1>Our Gallery</h1>
             <hr />
           </div>
         <p>

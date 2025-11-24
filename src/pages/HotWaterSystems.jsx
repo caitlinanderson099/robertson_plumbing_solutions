@@ -36,7 +36,7 @@ const HotWaterSystems = () => {
 
         <div className="hot-water-left">
           <div className="header">
-            <h1>Hot water system services</h1>
+            <h1>Hot Water Services</h1>
             <hr />
           </div>
           <div className="hot-water-services">

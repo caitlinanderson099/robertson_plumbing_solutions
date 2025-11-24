@@ -5,7 +5,7 @@ const CertificationSection = () => {
   return (
     <section className="certification-section">
       <div className="certification-container">
-        <h2 className="certification-title">Trusted & certified specialists</h2>
+        <h2 className="certification-title">Trusted & Certified Specialists</h2>
 
         <div className="certification-badges">
           <div className="cert-card">

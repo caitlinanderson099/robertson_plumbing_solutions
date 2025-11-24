@@ -48,7 +48,7 @@ const Heating = () => {
 
         <div className="heating-left"> 
           <div className="header">
-            <h1>Heating services</h1>
+            <h1>Heating Services</h1>
             <hr />
           </div>
           <div className="heating-services">

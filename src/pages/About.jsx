@@ -34,7 +34,7 @@ const About = () => {
 
         <div className="right">
           <div className="header">
-            <h1>About us</h1>
+            <h1>About Us</h1>
             <hr />
           </div>
           <p>Robertson Plumbing Solutions is a locally owned company providing high quality and affordable plumbing, drain laying and heating services to the Hutt Valley and wider Wellington region. </p>

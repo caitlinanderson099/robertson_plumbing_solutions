@@ -77,7 +77,7 @@ const Plumbing = () => {
 
         <div className="plumbing-left">
           <div className="header">
-            <h1>Plumbing services</h1>
+            <h1>Plumbing Services</h1>
             <hr />
           </div>
           <div className="plumbing-services">

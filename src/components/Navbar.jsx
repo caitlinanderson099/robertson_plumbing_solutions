@@ -95,7 +95,7 @@ const Navbar = () => {
                       setIsOpen(false);
                     }}
                   >
-                    Hot water systems
+                    Hot Water Systems
                   </NavLink>
                   <NavLink
                     to="/rural"

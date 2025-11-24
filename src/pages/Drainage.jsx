@@ -51,7 +51,7 @@ const Drainage = () => {
 
         <div className="drainage-left">
           <div className="header">
-            <h1>Drainage services</h1>
+            <h1>Drainage Services</h1>
             <hr />
           </div>
           <div className="drainage-services">
