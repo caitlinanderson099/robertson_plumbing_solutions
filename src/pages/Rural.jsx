@@ -85,11 +85,12 @@ const Rural = () => {
   return (
     <>
     <SEO
-        title="Rural | Robertson Plumbing Solutions"
-        description="Professional plumbing services in NZ"
-        keywords="hot water, systems, rural, NZ, Robertson, plumbing"
-        author="Robertson Plumbing Solutions"
-        image="http://localhost:5173/logo-images/logo.svg"
+        title="Rural Services | Robertson Plumbing Solutions Ltd"
+        description="Get in touch with Robertson Plumbing for residential and commercial plumbing services in Wellington and Upper Hutt."
+        keywords="plumber wellington, plumbing, blocked drains, hot water cylinders"
+        author="Robertson Plumbing Solutions Ltd"
+        image="https://www.robertsonplumbing.co.nz/logo-images/favicon.png"
+        url="https://www.robertsonplumbing.co.nz/#/rural"
       />
         <div className="rural-page">
           <TopSection/>

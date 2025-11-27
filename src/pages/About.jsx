@@ -257,11 +257,13 @@ const toggleAccordion = (index) => {
   return (
     <>
     <SEO
-      title="About Us | Robertson Plumbing Solutions"
-        description="Professional plumbing services in NZ"
-        keywords="plumbing, NZ, Robertson"
-        author="Robertson Plumbing Solutions"
-        image="http://localhost:5173/logo-images/logo.svg"/>
+        title="About Us | Robertson Plumbing Solutions Ltd"
+        description="Get in touch with Robertson Plumbing for residential and commercial plumbing services in Wellington and Upper Hutt."
+        keywords="plumber wellington, plumbing, blocked drains, hot water cylinders"
+        author="Robertson Plumbing Solutions Ltd"
+        image="https://www.robertsonplumbing.co.nz/logo-images/favicon.png"
+        url="https://www.robertsonplumbing.co.nz/#/about"
+      />
     <div className='about-page'>
     <AboutSection/>
     <ServiceSection/>

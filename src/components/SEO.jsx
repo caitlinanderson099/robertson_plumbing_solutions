@@ -1,50 +1,54 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
-const SEO = ({ title, description, keywords, author, image }) => {
-  useEffect(() => {
-    if (title) document.title = title;
+const SEO = ({
+  title,
+  description,
+  keywords,
+  author,
+  image,
+  url,
+}) => {
+  const defaultImage = image || "/default-og-image.jpg"; // Optional fallback
 
-    if (description) {
-      let metaDesc = document.querySelector("meta[name='description']");
-      if (!metaDesc) {
-        metaDesc = document.createElement("meta");
-        metaDesc.name = "description";
-        document.head.appendChild(metaDesc);
-      }
-      metaDesc.content = description;
-    }
+  return (
+    <Helmet>
+      {/* Page Title */}
+      {title && <title>{title}</title>}
 
-    if (keywords) {
-      let metaKeywords = document.querySelector("meta[name='keywords']");
-      if (!metaKeywords) {
-        metaKeywords = document.createElement("meta");
-        metaKeywords.name = "keywords";
-        document.head.appendChild(metaKeywords);
-      }
-      metaKeywords.content = keywords;
-    }
+      {/* Main Tags */}
+      {description && (
+        <meta name="description" content={description} />
+      )}
 
-    if (author) {
-      let metaAuthor = document.querySelector("meta[name='author']");
-      if (!metaAuthor) {
-        metaAuthor = document.createElement("meta");
-        metaAuthor.name = "author";
-        document.head.appendChild(metaAuthor);
-      }
-      metaAuthor.content = author;
-    }
-   if (image) {
-      let metaImage = document.querySelector("meta[property='og:image']");
-      if (!metaImage) {
-        metaImage = document.createElement("meta");
-        metaImage.setAttribute("property", "og:image");
-        document.head.appendChild(metaImage);
-      }
-      metaImage.content = image;
-    }
-  }, [title, description, keywords, author, image]);
+      {keywords && (
+        <meta name="keywords" content={keywords} />
+      )}
 
-  return null; // no actual JSX rendered
+      {author && (
+        <meta name="author" content={author} />
+      )}
+
+      {/* Canonical URL (important for SEO) */}
+      {url && <link rel="canonical" href={url} />}
+
+      {/* Open Graph */}
+      {title && <meta property="og:title" content={title} />}
+      {description && (
+        <meta property="og:description" content={description} />
+      )}
+      {url && <meta property="og:url" content={url} />}
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={defaultImage} />
+
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      {title && <meta name="twitter:title" content={title} />}
+      {description && (
+        <meta name="twitter:description" content={description} />
+      )}
+      <meta name="twitter:image" content={defaultImage} />
+    </Helmet>
+  );
 };
 
 export default SEO;
