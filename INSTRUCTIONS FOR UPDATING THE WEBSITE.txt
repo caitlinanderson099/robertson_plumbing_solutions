@@ -1,0 +1,46 @@
+Quick Steps to Upload Local Code Changes
+
+Backup to GitHub (recommended)
+
+git init
+git add .
+git commit -m "Your message"
+git push
+
+
+Build the project
+
+npm run build
+
+
+→ Creates a dist folder.
+
+Zip the build
+
+Locate dist folder on your computer.
+
+Right-click → Compress/Zip.
+
+Upload to cPanel
+
+Log in → File Manager → public_html.
+
+Click Upload → upload dist.zip.
+
+Go back and locate dist.zip.
+
+Extract files
+
+Select dist.zip → Extract.
+
+Move files to public_html
+
+Open extracted dist folder → select all files → Move → /public_html.
+
+Clean up
+
+Delete the empty dist folder.
+
+Done
+
+Website is updated automatically.
