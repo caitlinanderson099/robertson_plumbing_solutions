@@ -27,7 +27,7 @@ const Footer = () => {
         {/* Right Section - Quick Links or Contact (optional for future) */}
         <div className="footer-contact">
           <a href="mailto:ben@robertsonplumbing.co.nz">ben@robertsonplumbing.co.nz</a>
-          <a href="tel:0273412624">027 365 1682</a>
+          <a href="tel:0273651682">027 365 1682</a>
         </div>
       </div>
     </footer>
